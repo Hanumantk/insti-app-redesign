@@ -1,5 +1,6 @@
 // Every file here was exported from the Figma file via get_design_context asset URLs.
-const a = (name: string) => `/assets/${name}`
+// Prefixed with Vite's base so the build also works under a sub-path (GitHub Pages).
+const a = (name: string) => `${import.meta.env.BASE_URL}assets/${name}`
 
 export const A = {
   logoBg: a('logo-lotus-a.png'),

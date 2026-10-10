@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --port 5540 --strictPort",
     "build": "tsc -b && vite build",
+    "deploy": "bash scripts/deploy-pages.sh",
     "preview": "vite preview --port 5540 --strictPort",
     "test:loop": "playwright test qa/demo-loop.spec.ts",
     "sync:feed": "node scripts/sync-feed.mjs"

@@ -24,6 +24,9 @@ export const CLUBS: Record<string, Club> = {
   ...Object.fromEntries(Object.values(live.clubs).map((c) => [c.id, { id: c.id, name: c.name, tagline: c.tagline }])),
 }
 
+/** Snapshot paths are site-absolute ("/assets/live/…"); prefix Vite's base for sub-path hosting. */
+const asset = (p?: string) => (p ? `${import.meta.env.BASE_URL}${p.replace(/^\//, '')}` : undefined)
+
 function liveEvents(): InstiEvent[] {
   return (live.events as LiveEvent[]).map((e) => ({
     id: e.id,
@@ -37,10 +40,10 @@ function liveEvents(): InstiEvent[] {
     deadline: e.deadline,
     time: e.time,
     venue: e.venue,
-    detailPoster: e.poster,
-    cardPoster: e.poster,
-    statusPoster: e.poster,
-    heroPoster: e.poster,
+    detailPoster: asset(e.poster),
+    cardPoster: asset(e.poster),
+    statusPoster: asset(e.poster),
+    heroPoster: asset(e.poster),
     website: e.website,
     clubs: e.clubs,
     interested: e.interested,

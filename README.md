@@ -6,6 +6,11 @@ This is the iterated version of the Insti App prototype. The **Figma-faithful bu
 the main job: **GSHA and GSec reviewing events on a laptop.** Its feed shows **real posts from
 [insti.app/feed](https://www.insti.app/feed)** alongside the Figma posts (see § Data).
 
+**Live demo:** https://hanumantk.github.io/insti-app-redesign/
+(switch to **GSec** at the bottom-left and open
+[Event Approvals](https://hanumantk.github.io/insti-app-redesign/home?tab=approvals) for the review workspace).
+The hosted build uses fallback fonts, because Neue Montreal isn't public (see § Fonts).
+
 The locked design system is in [`design.md`](design.md), and the tokens are in [`src/styles/tokens.css`](src/styles/tokens.css).
 
 ## Run it
@@ -24,6 +29,7 @@ Helvetica Neue or Arial.
 | `npx playwright test qa/demo-loop.spec.ts` | Full demo loop, the filter sheet, keyboard review, and a no-overflow check at 320/390/768px |
 | `npx playwright test qa/shots.spec.ts` | Review screenshots → `qa/shots/` (1440, 1280 and 390 wide) |
 | `npm run sync:feed` | Re-snapshot the live insti.app feed (see § Data) |
+| `npm run deploy` | Build for GitHub Pages and publish `dist/` to the `gh-pages` branch (the live demo) |
 
 The role switcher (bottom-left, **View as: Student · GSHA · GSec · Reset**) works as before. `?demo=0` hides it.
 Data is stored under its own key (`insti-redesign-v3`), so the two builds don't share demo state.
