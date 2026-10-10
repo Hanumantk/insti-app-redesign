@@ -1,0 +1,61 @@
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R4 V4
+ * Hallmark · genre: modern-minimal · design-system: design.md · designed-as-app
+ * families: review workspace (master-detail) · browse (ecosystem index) · detail (split) · form (split) · gate
+ * theme: custom (vibe: "Insti blue, cool paper, friendly pills")
+ * paper oklch(97.6% 0.012 262) · accent oklch(55.3% 0.182 262.5) · Neue Montreal + DM Sans (wordmark only)
+ * axes: light / grotesk-sans / cool
+ * nav: brand app bar (Figma 75:581, kept per "maintain tone") · footer: Ft2-style night band
+ * contrast: pass (40–41) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · mobile: pass (34, 49–51, 56) · icons: Phosphor only (30)
+ */
+:root {
+  --color-paper: oklch(97.6% 0.012 262);
+  --color-surface: oklch(99.6% 0.003 262);
+  --color-surface-2: oklch(95.6% 0.016 262);
+  --color-ink: oklch(23% 0.025 262);
+  --color-ink-2: oklch(36% 0.022 262);
+  --color-muted: oklch(50% 0.02 262);
+  --color-rule: oklch(91% 0.014 262);
+  --color-rule-strong: oklch(66% 0.02 262);
+  --color-accent: oklch(55.3% 0.182 262.5);
+  --color-accent-strong: oklch(47% 0.19 263);
+  --color-accent-tint: oklch(94.5% 0.03 262);
+  --color-accent-ink: oklch(99.5% 0.004 262);
+  --color-focus: oklch(47% 0.19 263);
+
+  --color-ok: oklch(45% 0.12 150);
+  --color-ok-tint: oklch(96% 0.035 150);
+  --color-ok-rule: oklch(72% 0.13 150);
+  --color-bad: oklch(50% 0.19 27);
+  --color-bad-tint: oklch(96.5% 0.022 27);
+  --color-bad-rule: oklch(74% 0.13 27);
+  --color-wait: oklch(48% 0.105 70);
+  --color-wait-tint: oklch(96.5% 0.045 90);
+  --color-wait-rule: oklch(80% 0.13 85);
+
+  --color-badge: oklch(54% 0.2 27);
+  --color-night: oklch(25% 0.015 262);
+  --color-night-ink: oklch(86% 0.012 262);
+  --color-night-rule: oklch(36% 0.015 262);
+  --color-scrim: oklch(23% 0.025 262 / 0.32);
+  --color-squiggle: oklch(80% 0.07 262);
+
+  --font-body: 'Neue Montreal Web', 'Neue Montreal', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Neue Montreal Web', 'Neue Montreal', 'Helvetica Neue', Arial, sans-serif;
+  --font-wordmark: 'DM Sans', Arial, sans-serif;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
+  --gutter: clamp(16px, 4vw, 48px);
+
+  --radius-input: 10px; --radius-tile: 12px; --radius-card: 16px; --radius-panel: 20px; --radius-pill: 999px;
+
+  --shadow-hover: 0 8px 24px -12px oklch(40% 0.08 262 / 0.28);
+  --shadow-sheet: -16px 0 48px -24px oklch(30% 0.05 262 / 0.35);
+  --shadow-toast: 0 12px 32px -12px oklch(23% 0.025 262 / 0.4);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-press: 120ms; --dur-short: 160ms; --dur-sheet-in: 240ms; --dur-sheet-out: 180ms;
+
+  --topbar-h: 64px;
+}

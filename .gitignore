@@ -1,0 +1,11 @@
+node_modules
+dist
+test-results
+playwright-report
+*.tsbuildinfo
+
+# Commercial fonts (Helvetica Neue, Neue Montreal) are not redistributable — see README § Fonts.
+public/fonts/*.otf
+public/fonts/*.ttf
+public/fonts/*.woff
+public/fonts/*.woff2

@@ -1,0 +1,588 @@
+{
+  "source": "https://gymkhana.iitb.ac.in/instiapp/api/events",
+  "since": "2026-09-01",
+  "fetchedAt": "2026-10-10T19:01:49.740Z",
+  "clubs": {
+    "aquatics": {
+      "id": "aquatics",
+      "name": "Aquatics",
+      "tagline": "Swimming+ @IITB"
+    },
+    "gssa": {
+      "id": "gssa",
+      "name": "IITB Sports",
+      "tagline": "UNTIL. VICTORY. ALWAYS."
+    },
+    "flourishing-hub": {
+      "id": "flourishing-hub",
+      "name": "Flourishing hub",
+      "tagline": ""
+    },
+    "symphony": {
+      "id": "symphony",
+      "name": "Symphony",
+      "tagline": "Music Club"
+    },
+    "fourthwall": {
+      "id": "fourthwall",
+      "name": "Fourthwall",
+      "tagline": "Dramatics Club"
+    },
+    "hult-prize-iitb": {
+      "id": "hult-prize-iitb",
+      "name": "Hult Prize IITB",
+      "tagline": ""
+    },
+    "mood-indigo": {
+      "id": "mood-indigo",
+      "name": "Mood Indigo",
+      "tagline": "Asia's Largest College Cultural Festival!"
+    },
+    "techfest": {
+      "id": "techfest",
+      "name": "Techfest",
+      "tagline": "Asia's Largest Science and Technology Fest"
+    },
+    "e-cell": {
+      "id": "e-cell",
+      "name": "E-Cell",
+      "tagline": "The Entrepreneurship Cell, IIT Bombay"
+    },
+    "cse": {
+      "id": "cse",
+      "name": "Computer Science and Engineering",
+      "tagline": "CSE"
+    },
+    "chea": {
+      "id": "chea",
+      "name": "Chemical Engineering Association",
+      "tagline": "ChEA"
+    },
+    "swc": {
+      "id": "swc",
+      "name": "Student Wellness Centre",
+      "tagline": ""
+    },
+    "sarc": {
+      "id": "sarc",
+      "name": "Student Alumni Relations Cell (SARC)",
+      "tagline": "SARC connects the Students to the Alumni of IITB."
+    }
+  },
+  "events": [
+    {
+      "id": "inter-iit-pre-camp-trials-4a05ef29",
+      "sourceId": "4a05ef29-d288-4e58-a8fb-75c2a34de831",
+      "type": "competition",
+      "typeReason": "keyword in title",
+      "apiStatus": "approved",
+      "title": "Inter IIT Pre-Camp Trials",
+      "description": "Greetings from the Institute Sports Council!\n\nWe are pleased to announce that the Aquatics Club, IIT Bombay, will be conducting the Inter IIT Pre-Camp Trials for Swimming and Water Polo for the upcoming Inter IIT Aquatics Meet, October 2026.\n\nDate: Tuesday, 11 August 2026\n\nTime: 6:30 PM onwards\n\nVenue: Institute Swimming Pool\n\nAll enthusiastic swimmers are encouraged to participate in the trials.\n\nPlease note that this trial is not intended for beginner swimmers. A separate camp for beginners will be conducted, and the details will be shared soon.\n\nAll interested participants are requested to fill out the following\nform: https://forms.gle/gStJ1EKmh7VGya2f8\n\nFor any queries, feel free to contact:\n\nIshanei Kumar\nInstitute Aquatics Secretary\n[number removed]\n\n\nUntil. Victory. Always.\nSportingly,\nDeepraj Singh Kasherwal\nGeneral Secretary, Sports Affairs\nIIT Bombay\n[number removed]",
+      "date": "Thu, 8 Oct – 8 Nov",
+      "time": "6:00 PM",
+      "venue": "Swimming Pool",
+      "clubs": [
+        "aquatics",
+        "gssa"
+      ],
+      "interested": 0,
+      "going": 4,
+      "weight": 540,
+      "createdAt": 1786365282388,
+      "startsAt": 1791462600000
+    },
+    {
+      "id": "psychological-first-aid-4-module-course-f1bc038d",
+      "sourceId": "f1bc038d-9b85-4894-b4a1-9c13e6e412db",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Psychological First Aid 4 Module Course",
+      "description": "Dear Students,\n\nGreetings from the Flourishing Hub, IIT Bombay.\n\nWe are pleased to invite you to a 4-module workshop series on Psychological First Aid.\n\nThis course will equip students to identify signs of psychological distress, respond compassionately, support immediate safety and connect peers with appropriate professional resources. It does not train participants to diagnose psychological disorders or provide counselling.\n\n\n\nThe workshop series will cover:\n\n* Module 1: Recognise Psychological Distress - 6th Oct 2026, Tuesday\n\nUnderstand common psychological concerns experienced in demanding academic environments. Recognise emotional, cognitive, behavioural, physical, academic and social signs of distress. Understand how academic pressure, perfectionism, comparison, isolation and personal difficulties contribute to distress. Differentiate temporary stress from persistent or escalating concerns.\n\n\n\n* Module 2:  Suicide Prevention & Crisis Response - 13th Oct 2026, Tuesday\n\n\n\nUnderstand the nature of suicidal distress. Recognise suicide risk factors and warning signs. Learn how to ask directly and sensitively about suicidal thoughts. Understand the immediate actions required during a crisis.\n\n\n\n* Module 3:  Stabilise Distress & Strengthen Coping - 21st Oct 2026, Wednesday\n\n\n\n Understand how distress affects thoughts, emotions, bodily responses and behaviour. Recognise avoidance, perfectionism, overwork and other unhelpful coping cycles. Learn brief grounding and emotional-regulation strategies.Help a distressed person identify manageable next steps.\n\n\n\n * Module 4: Providing Psychological First Aid - 27th Oct 2026, Tuesday\n\n\n\nDevelop practical skills for approaching and supporting a distressed person. Practise active listening, empathy and validation. Apply the Psychological First Aid framework of Look, Listen and Link. Understand confidentiality, role boundaries, referral and supporter well-being.\n\n\n\nWorkshop Details\n\n📅 Date: Module 1- 6th Oct 2026, Tuesday\n\nModule 2 - 13th Oct 2026, Tuesday\n\nModule 3- 21st Oct 2026, Wednesday\n\nModule 4- 27th Oct 2026, Tuesday\n\n🕙 Time: 6.30 pm - 8.00 pm\n\n📍 Venue: LT 303\n\nRegister here: https://forms.gle/c9ATcY7R3oWrEfa18\n\nIn case of any queries please write to us at flourishing@iitbfh.com.\n\nBest regards,\n\nFlourishing Hub Team",
+      "date": "Tue, 6 Oct",
+      "time": "6:30 PM",
+      "venue": "Lecture Hall Complex (LHC) · LT 303",
+      "clubs": [
+        "flourishing-hub"
+      ],
+      "poster": "/assets/live/psychological-first-aid-4-module-course-f1bc038d.jpg",
+      "website": "https://www.flourishing-iitb.org/psychologicalfirstaid",
+      "interested": 0,
+      "going": 1,
+      "weight": 401,
+      "createdAt": 1791288832952,
+      "startsAt": 1791291600000
+    },
+    {
+      "id": "breaking-the-walls---theatrefest-all-team-meet-361e1ebb",
+      "sourceId": "361e1ebb-c5c8-477d-9bf4-c6bfa88969f6",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Breaking the Walls - TheatreFest All Team Meet",
+      "description": "Dear Students,\n\nThe stage is set, the lights are on, and TheatreFest is ready to come alive!\n\nFourthwall, the Dramatics Club of IIT Bombay, invites you to “Breaking the Walls”, an evening that marks the TheatreFest All Team Meet (ATM).\n\nDate: 5th October\nTime: 5:00 PM\nVenue: LT-PCSA\n\nWhat’s Happening?\n\nKnow Fourthwall\nStep into the world of acting, writing, direction, design, and everything that goes into creating theatre with Fourthwall.\n\nTheatreFest All Team Meet\nDiscover what TheatreFest is all about and find out how you can be a part of bringing IIT Bombay’s grand celebration of theatre to life.\n\nBecome a TheatreFest Coordinator\n\nTheatreFest is back with another magical edition, and we’re looking for passionate people to join us as TheatreFest Coordinators.\n\nAs a coordinator, you’ll work closely with the Fourthwall team and get the opportunity to contribute to the making of TheatreFest, from artists and outreach to publicity, design, social media, décor, ambience, setup, and event execution.\n\nWhether you’re a theatre enthusiast, a creative mind, a social media pro, or simply someone who loves creating unforgettable experiences, there’s a place for you.\n\nWant to be part of the team behind TheatreFest?\n\nRegister here:\nhttps://forms.gle/akxEJHSRx17bdWgn9\n\nJoin the WhatsApp group:\nhttps://chat.whatsapp.com/FfMQv64zu7xCRf1PGzhIMG\n\nCome behind the scenes. Create the magic. Make your mark on one of IIT Bombay’s biggest theatre celebrations.\n\nLARGER. LOUDER. LEGENDARY. | THEATREFEST\n\nFor more details contact\n\nSamridhi Patwari :\n[number removed]\n\nTheatreFest Overall Coordinator\n\n\n\nRegards,\nShivam Gawande\nInstitute Dramatics Secretary\nHead, Fourthwall\nInstitute Cultural Council (ICC)\n[number removed] | isdram@iitb.ac.in",
+      "date": "Mon, 5 Oct",
+      "time": "5:00 PM",
+      "venue": "LTPCSA",
+      "clubs": [
+        "fourthwall"
+      ],
+      "poster": "/assets/live/breaking-the-walls---theatrefest-all-team-meet-361e1ebb.jpg",
+      "interested": 0,
+      "going": 3,
+      "weight": 400,
+      "createdAt": 1791188713476,
+      "startsAt": 1791199829201
+    },
+    {
+      "id": "battle-of-the-bands-2026--registration-open-d4fc044a",
+      "sourceId": "d4fc044a-9bdf-495c-b6ba-c56de3b593df",
+      "type": "competition",
+      "typeReason": "keyword in title",
+      "apiStatus": "pending",
+      "title": "Battle Of the Bands 2026 | Registration Open!!",
+      "description": "Greetings from Symphony!\n\nGet ready for the ultimate musical showdown of the year, Battle of the Bands 2026! No matter your style, be it Rock, Blues, Funk, Fusion, or Classical, all genres are welcome. This is your moment to shine in front of the entire institute!\n\nThe champions won’t just claim the title, but also secure a spot to perform at our flagship event, Surbahaar, and gain priority to represent the institute at various intercollegiate cultural fests.\n\nRegistration Link: https://forms.gle/buYi4H5eqALjzyG26\nRulebook: https://docs.google.com/document/d/1t6Dp9pioSzKgTn2TvOcPKsakpjF1Kle7WjCcpywHMHI/edit?usp=sharing\n\nIf you're having trouble finding band members, check out the sheet below to connect with other musicians who are also looking to form a band: https://docs.google.com/spreadsheets/d/1vGM3BcvhFCXjYg5J9aCDZO78pzXjcIr4y8DBg339gNo/edit?usp=sharing\n\nRegistration Deadline: 10th October, 11:59pm.\n\nCompetition Date: 27th October 2025\nVenue: LT-PCSA\n\nWarm Regards     \nRonak Solanki\nInstitute Music Secretary\nInstitute Cultural Council\nIndian Institute of Technology Bombay\n\nPh: [number removed]",
+      "date": "Mon, 5 Oct – 10 Oct",
+      "deadline": "Deadline 10 Oct",
+      "time": "",
+      "venue": "LTPCSA",
+      "clubs": [
+        "symphony"
+      ],
+      "poster": "/assets/live/battle-of-the-bands-2026--registration-open-d4fc044a.jpg",
+      "interested": 0,
+      "going": 8,
+      "weight": 401,
+      "createdAt": 1791150944056,
+      "startsAt": 1791138616215
+    },
+    {
+      "id": "hult-prize-orientation-03fe1726",
+      "sourceId": "03fe1726-289b-4fdd-a61d-5ac741a58517",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Hult Prize Orientation",
+      "description": "One step closer to the $1 Million USD Hult Prize.\n\nJoin us for the orientation session  meet the team, hear from our speakers, and learn how you can be part of this year's challenge.\n\nDate: 4th October 2026\nTime: 6:00 PM onwards\nVenue: Hackathon space, DSSE\n\nFun activities, freebies, and refreshments on us.",
+      "date": "Sun, 4 Oct",
+      "time": "6:00 AM",
+      "venue": "Lecture Hall Complex (LHC) · Hackathon Space",
+      "clubs": [
+        "hult-prize-iitb"
+      ],
+      "poster": "/assets/live/hult-prize-orientation-03fe1726.jpg",
+      "interested": 0,
+      "going": 4,
+      "weight": 400,
+      "createdAt": 1790668064098,
+      "startsAt": 1791073800000
+    },
+    {
+      "id": "mastering-attention-distraction-to-concentration-5d58dd6c",
+      "sourceId": "5d58dd6c-6952-47da-9bff-004916668455",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Mastering Attention: Distraction to Concentration",
+      "description": "Dear Students,\n\nGreetings from the Flourishing Hub, IIT Bombay.\n\nIn a world of constant notifications, social media, and competing demands for our attention, staying focused has become increasingly challenging. How can we understand the ways in which digital distractions affect our attention, and develop the ability to concentrate on what truly matters?\n\nThe Flourishing Hub invites you to Mastering Your Attention: From Distraction to Concentration, an interactive workshop by Mr. Dnyaneshwar Nerkar, International Trainer, Digital Wellness & Focus Evangelist.\n\nThe session will explore the relationship between digital distractions, social media, and our ability to concentrate, while introducing practical perspectives on developing focused attention.\n\nKey Themes:\n\nImpact of Social Media: Why It Is Addictive\nConcentration: The Key to Success\nWorkshop Details\n\n📅 Date: Saturday, 3 October 2026\n\n🕙 Time: 10:00 AM – 1:00 PM\n\n📍 Venue: LC 202\n\nPlease register using the link: https://forms.gle/JQDcHfKMndNSkn4c9\n\nLink to Poster:\nhttps://drive.google.com/file/d/1HgHELG7HeBNeuBcfduC1_yoZtTn4s6Ka/view?usp=sharing\n\nLink to Banner:\n\nhttps://drive.google.com/file/d/13mkWUqxcAAx5YmjacIwUwjgBvj7WiKFf/view?usp=sharing\n\nBest regards,\n\nFlourishing Hub Team",
+      "date": "Sat, 3 Oct",
+      "time": "10:00 AM",
+      "venue": "Lecture Hall Complex (LHC) · LC 202",
+      "clubs": [
+        "flourishing-hub"
+      ],
+      "poster": "/assets/live/mastering-attention-distraction-to-concentration-5d58dd6c.jpg",
+      "website": "https://www.flourishing-iitb.org/",
+      "interested": 0,
+      "going": 1,
+      "weight": 400,
+      "createdAt": 1790618128193,
+      "startsAt": 1791001800000
+    },
+    {
+      "id": "mood-indigos-freshers-orientation-503a7c23",
+      "sourceId": "503a7c23-7901-4b82-ae3a-34710e4bf657",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Mood Indigo's Freshers' Orientation",
+      "description": "Freshers, your college life deserves a grand opening, and we think we have just the evening for it! 👀💙\n\nGet ready for an evening featuring the soulful voice of Shahid Mallya, the musical brilliance of Maan Panu, and a special star interaction with Harshita Shekhar Gaur from Mirzapur!\n\nAnd that’s not all! With live music, Lollapalooza tickets, Imagica tickets, exclusive MI merch and a few surprises in store, there’s plenty to look forward to at this year’s Freshers’ Orientation. 🎶✨\n\n📅 2nd October\n⏰ 5:00 PM\n📍 Convocation Hall\n\nFirst year, first orientation, first Mood Indigo memory. Let’s make it count! 💥\n\n#MoodIndigo2026 #FreshersOrientation #IITBombay",
+      "date": "Fri, 2 Oct",
+      "time": "5:00 PM",
+      "venue": "Convocation Hall",
+      "clubs": [
+        "mood-indigo"
+      ],
+      "poster": "/assets/live/mood-indigos-freshers-orientation-503a7c23.jpg",
+      "website": "https://my.moodi.org/",
+      "interested": 0,
+      "going": 2,
+      "weight": 400,
+      "createdAt": 1790916396878,
+      "startsAt": 1790940613991
+    },
+    {
+      "id": "symphpny-orientation--imlp-session-0-ddc421aa",
+      "sourceId": "ddc421aa-f838-4fb0-bfe6-6e95db992d08",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Symphpny Orientation | IMLP Session 0",
+      "description": "Greetings from Symphony, the Music Club of IIT Bombay!\n\nWe are excited to invite you all to Symphony Orientation, the start of a new musical year and the first step on your journey into music.\n\nWhether you sing, play an instrument, or have never touched one, this evening is for you. Join us for an amazing musical night, get to know the Symphony community, and attend Session 0 of our Introductory Music Learning Program, where we'll walk you through what to expect, how to get started, and how you can be part of the music scene on campus.\n\nEvent Details\nDate: 1st October\nTime: 7:30 PM\nVenue: LT-PCSA\n\nCome with your curiosity, bring your friends, and let's make some music together.\n\nMark your calendars, and we look forward to seeing you there!\n\nWhatsApp Link : https://chat.whatsapp.com/EEtN2iRe2D31P9mxtTSnhG?mode=gi_t\n\nRegards,\n\nRonak Solanki\n\nInstitute Music Secretary\n\nInstitute Cultural Council (ICC), IIT Bombay\n\n[number removed]",
+      "date": "Thu, 1 Oct",
+      "time": "7:30 PM",
+      "venue": "LTPCSA",
+      "clubs": [
+        "symphony"
+      ],
+      "poster": "/assets/live/symphpny-orientation--imlp-session-0-ddc421aa.jpg",
+      "interested": 0,
+      "going": 4,
+      "weight": 400,
+      "createdAt": 1790757834628,
+      "startsAt": 1790863200000
+    },
+    {
+      "id": "techfest-freshmen-orientation-536429f7",
+      "sourceId": "536429f7-6a36-4dad-9042-bbcaf844e696",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Techfest Freshmen Orientation",
+      "description": "Freshers, your IIT Bombay journey deserves an epic start!\n\nGet ready for the Techfest Freshmen Orientation\n\n📅 30th September 4:30 PM\n📍Convocation Hall\n\nWhat’s waiting for you:\n- Special Session with Ranjit Bajaj\n- Robot Dance Battle\n- Laserman Act\n- Laser Show\n\nRefreshments on us!\n\nExciting freebies & prizes\n\nAnd the freebies? 👀\nFree Rolling Loud Tickets🔥\nShoes, jackets, T-shirts, Bottles\nAnd many more\n\nNote: Exclusively for 1st-year IIT Bombay UG & PG students.\n\nCome for the orientation, stay for the experience.\nSee you there, Freshers!",
+      "date": "Wed, 30 Sep",
+      "time": "4:30 PM",
+      "venue": "Convocation Hall",
+      "clubs": [
+        "techfest"
+      ],
+      "poster": "/assets/live/techfest-freshmen-orientation-536429f7.jpg",
+      "interested": 0,
+      "going": 5,
+      "weight": 400,
+      "createdAt": 1790600722240,
+      "startsAt": 1790766000000
+    },
+    {
+      "id": "student-workshop---emotional-fitness-course-5ae15e41",
+      "sourceId": "5ae15e41-fa77-45ec-95bc-f8c58e1b6ab1",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Student Workshop - Emotional Fitness course",
+      "description": "Dear Students,\n\nGreetings from the Flourishing Hub, IIT Bombay.\n\nWe are pleased to invite you to a 4-module workshop series on Emotional Fitness.\n\nThis practical, skills-based series will help you develop a healthier and more effective relationship with your emotions through reflection, experiential activities, and practical tools that can be applied to everyday life\n\nThe workshop series will cover:\n\nModule 1: Understanding Emotions- 7th Oct 2026\n\nLearn to recognise, understand, and accurately label your emotions, while exploring what emotions signal and how they influence your responses.\n\nModule 2: Emotional Regulation- 14th Oct 2026\n\nUnderstand your emotional triggers, manage emotional intensity, tolerate discomfort, and respond without impulsive reactions or suppression.\n\nModule 3: Building Positive Emotional Fitness-21st Oct 2026\n\nExplore ways to cultivate positive emotions through savouring, strengths, meaningful relationships, and everyday practices.\n\nModule 4: Applying Emotional Fitness- 28th Oct 2026\n\nDevelop emotional flexibility, communicate emotions effectively, navigate interpersonal situations, and create your own emotional fitness toolkit.\n\nLearn how to notice, understand, regulate, and respond to them more skillfully.\n\nWorkshop Details\n\n📅 Date:\n\nModule 1- 7th Oct 2026\n\nModule 2- 14th Oct 2026\n\nModule 3- 21st Oct 2026\n\nModule 4- 28th Oct 2026\n\n🕙 Time: 6.30 pm - 8.00 pm\n\n📍 Venue: LC 201\n\nRegister here: https://forms.gle/RA1ByiBCp43Tc2rx5\n\nLink to Poster: https://drive.google.com/file/d/1Z76TcstGwP2620goTQ3gldloKRwvOfVD/view?usp=sharing\n\nLink to Banner- https://drive.google.com/file/d/1-yflXIGnAmYC2HcQzTjKF69DeebS0JmX/view?usp=sharing\n\nBest regards,\n\nFlourishing Hub Team",
+      "date": "Tue, 29 Sep – 7 Oct",
+      "time": "2:00 PM",
+      "venue": "Lecture Hall Complex (LHC) · LC 201",
+      "clubs": [
+        "flourishing-hub"
+      ],
+      "poster": "/assets/live/student-workshop---emotional-fitness-course-5ae15e41.jpg",
+      "website": "https://www.flourishing-iitb.org/",
+      "interested": 0,
+      "going": 2,
+      "weight": 400,
+      "createdAt": 1790671164273,
+      "startsAt": 1790670600000
+    },
+    {
+      "id": "counselling-support--emergency-resources-e2d2397b",
+      "sourceId": "e2d2397b-8f86-4cba-82f7-183b02649122",
+      "type": "announcement",
+      "typeReason": "runs 93 days",
+      "apiStatus": "approved",
+      "title": "COUNSELLING SUPPORT & EMERGENCY RESOURCES",
+      "description": "If you or anyone you know is facing emotional or mental health challenges, please book an appointment with the Student Wellness Centre (SWC): https://swc.iitb.ac.in/counselling\n\nWALK IN COUNSELLING - Please find the availability of counsellors for walk-in sessions in hostels here: https://docs.google.com/document/d/16DbmfoS_JP4KmMN8h5xccvWmnW593Jml-oGgTJ8RuOI/edit?usp=sharing\n\n24/7 Helpline: 08047136761\n\n24/7 Online Counselling: https://swc.iitb.ac.in/online\n\nFor counselling outside campus through empanelled agencies, visit: https://my.iitb.ac.in/swc-ext/\nCharges are reimbursable.\n\nIf you or someone you know is in acute emotional distress, please immediately visit IIT Bombay Hospital, which is open 24/7 for emergencies.\n\n24/7 IITB Hospital Emergency Numbers:\n022-2159-1110 | +91 8291297051\n\nQRT: Male: 9833338989 | Female: 9167398598\n\nYou may also reach out to a counsellor through your mentors. If you have trouble accessing any of these services, please email chairperson.swc@iitb.ac.in, adean.sw@iitb.ac.in, or incharge.swc@iitb.ac.in.\n\nPlease seek support whenever you need it. We are here for you. 🌱",
+      "date": "Mon, 28 Sep – 31 Dec",
+      "time": "5:00 PM",
+      "venue": "Main Building · SWC Office, 3rd Floor,  Above Academic Section",
+      "clubs": [
+        "swc"
+      ],
+      "poster": "/assets/live/counselling-support--emergency-resources-e2d2397b.jpg",
+      "website": "https://swc.iitb.ac.in/",
+      "interested": 0,
+      "going": 1,
+      "weight": 176.99115044247787,
+      "createdAt": 1790595847681,
+      "startsAt": 1790595002397
+    },
+    {
+      "id": "reach-out-for-support-8a5d2c28",
+      "sourceId": "8a5d2c28-71e3-409c-8b02-13e979568506",
+      "type": "announcement",
+      "typeReason": "runs 93 days",
+      "apiStatus": "approved",
+      "title": "REACH OUT FOR SUPPORT",
+      "description": "SWC offers mental and emotional support on campus and online, at no cost. If you or someone you know may be experiencing distress, please don’t hesitate to reach out to us.",
+      "date": "Mon, 28 Sep – 31 Dec",
+      "time": "4:00 PM",
+      "venue": "Main Building · SWC Office, 3rd Floor, Above Academic Section",
+      "clubs": [
+        "swc"
+      ],
+      "poster": "/assets/live/reach-out-for-support-8a5d2c28.jpg",
+      "website": "https://swc.iitb.ac.in/",
+      "interested": 0,
+      "going": 1,
+      "weight": 176.99115044247787,
+      "createdAt": 1790592322596,
+      "startsAt": 1790591444416
+    },
+    {
+      "id": "e-cell-ug-orientation-ac0a2731",
+      "sourceId": "ac0a2731-87a7-45a4-8129-07fb4c2ce45a",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "E-Cell UG Orientation",
+      "description": "The world’s biggest entrepreneurs started somewhere. Yours starts here.\n\nE-Cell IIT Bombay presents UG Orientation, your first step into the world of entrepreneurship.\n\nHear from N.R. Narayana Murthy, Founder of Infosys, and Aman Goel, Co-Founder and CEO of GreyLabs AI (IITB’17).\n\n📅 27th September, 5:30 PM\n📍 Convocation Hall, IIT Bombay\n\nExciting prizes and freebies awaiting. Refreshments for all.\n\nDon’t miss the beginning of your entrepreneurial journey.",
+      "date": "Sun, 27 Sep",
+      "time": "5:30 PM",
+      "venue": "Convocation Hall",
+      "clubs": [
+        "e-cell"
+      ],
+      "poster": "/assets/live/e-cell-ug-orientation-ac0a2731.jpg",
+      "interested": 0,
+      "going": 2,
+      "weight": 400,
+      "createdAt": 1790470078290,
+      "startsAt": 1790510406334
+    },
+    {
+      "id": "e-cell-ug-orientation---game-7fa0d666",
+      "sourceId": "7fa0d666-36ce-4ba9-b78a-decddb0ee260",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "E-Cell UG Orientation - Game",
+      "description": "As part of the UG Orientation 2026 , E-Cell IIT Bombay x EnB Club presents a game where you guess the founder, find your crew, and play your way to real rewards.\n\n🕵️ How it works: Log in → decode your hint card → find the 3 other players who share your founder theme → lock in as a crew of 4 → take on the final challenge together.\n\n🎁 What's in it for you: ₹4 Lakh+ worth of rewards - and it's not just for the winning team. Passes and prizes are up for grabs across the board, so simply playing puts you in the running.\n\nAlso get to witness amazing speaker sessions by Mr. N.R. Narayana Murthy , Founder, Infosys, and Mr. Aman Goel , Co-Founder and CEO, Greylabs AI!\n\n📅 27th September, 5:30 PM\n📍 Convocation Hall, IIT Bombay\n\nScan the QR on the poster or hit the link to log in and get your hint.\nhttps://www.ecell.in/founderscreed/\n\nSee you there!",
+      "date": "Sat, 26 Sep – 27 Sep",
+      "time": "4:00 PM",
+      "venue": "Convocation Hall",
+      "clubs": [
+        "e-cell"
+      ],
+      "poster": "/assets/live/e-cell-ug-orientation---game-7fa0d666.jpg",
+      "website": "https://www.ecell.in/founderscreed/",
+      "interested": 0,
+      "going": 0,
+      "weight": 400,
+      "createdAt": 1790417618802,
+      "startsAt": 1790418646528
+    },
+    {
+      "id": "cse-department-trek-2026-99fe8226",
+      "sourceId": "99fe8226-5ec7-464f-b210-5d2b67dbeda7",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "CSE Department Trek 2026",
+      "description": "✨ Get ready to embark on an unforgettable adventure! ✨\n\nThe CSE Department Trek 2026 to Samrad is here! 🏔️\n\nGear up for an exciting journey filled with breathtaking views, great company, and memories to last a lifetime. With limited seats available, make sure you register soon and secure your spot!\n\n🚌 Departure: 10:00 PM, 25th September\n🏕️ Return: 8:00 PM, 26th September\n💰 Price per person: ₹1049\n\n𝐈𝐭𝐢𝐧𝐞𝐫𝐚𝐫𝐲: [https://tinyurl.com/2z7fdwj3](https://tinyurl.com/2z7fdwj3)\n\n𝐑𝐞𝐠𝐢𝐬𝐭𝐞𝐫 𝐡𝐞𝐫𝐞: [https://www.cse.iitb.ac.in/csea/events/](https://www.cse.iitb.ac.in/csea/events/)\n\n⏰ Registration deadline: 22nd September, 11:59 PM\n\nDon’t wait until the last moment — spots are limited, so register soon! 🌄\n\nFor more information,\nContact:\n\nRutvik Sai: [number removed]\n\nRamit Goyal:[number removed]",
+      "date": "Fri, 25 Sep",
+      "time": "11:00 PM",
+      "venue": "Online",
+      "clubs": [
+        "cse"
+      ],
+      "poster": "/assets/live/cse-department-trek-2026-99fe8226.jpg",
+      "interested": 0,
+      "going": 7,
+      "weight": 400,
+      "createdAt": 1789668220085,
+      "startsAt": 1790357400000
+    },
+    {
+      "id": "chea-department-trek-2026---open-for-all-e296b87e",
+      "sourceId": "e296b87e-c21c-40fb-8f3d-8d73ed73e623",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "ChEA Department Trek 2026 - Open for All",
+      "description": "The midsem grind may be here, but a much-needed escape is already on the horizon. 🌄\n\nOnce the exams are done, ChEA presents this year’s Department Trek to Sudhagad Fort - a chance to step beyond the screens, classrooms, and daily routine for a day of mountains, fresh air, good company, and unforgettable memories. 🌿🥾\n\nLocation :- Sudhagad Fort\nDate :- 26th September 2026\n\n📜 Itinerary: https://drive.google.com/file/d/1ciMwOJjgtQm_lzpxiOKgtJ4ypqQvN7za/view?usp=sharing\n\n📝Register Here: https://docs.google.com/forms/d/e/1FAIpQLSdBq_nPkg7jwXMvWOVp_0u2iI5pStjtzs5MhJC0DZ2VqtpC0g/viewform?usp=publish-editor\n\n⏳ Deadline: 22nd September, 11:59 PM\n\n🚨 Limited seats available - registrations will be on a First Come, First Served (FCFS) basis!\n\nNote:-\nPeople from All departments are welcome!\nUG freshers are not eligible..\n\nP.S : We will be leaving on the night of 25th September 2026",
+      "date": "Fri, 25 Sep",
+      "time": "11:00 PM",
+      "venue": "Online",
+      "clubs": [
+        "chea"
+      ],
+      "poster": "/assets/live/chea-department-trek-2026---open-for-all-e296b87e.jpg",
+      "website": "https://www.instagram.com/p/DdHLVbQs4Gs/?stkn=MWZpNGlvbmw1aGoxMQ==",
+      "interested": 0,
+      "going": 13,
+      "weight": 400,
+      "createdAt": 1789132408904,
+      "startsAt": 1790357400000
+    },
+    {
+      "id": "understanding-grief--an-open-workshop-bec60894",
+      "sourceId": "bec60894-49ff-4a93-ada7-fd650cd0f63f",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Understanding Grief | An Open Workshop",
+      "description": "Dear Students,\n\nNot all grief looks the same, and not all loss affects us in the same way.\n\nSometimes, grief may show up as feeling disconnected, finding it harder to concentrate, losing interest in things you usually enjoy, or simply feeling different from before.\n\nJoin 'Flourishing Hub, IIT Bombay' for an open workshop to  to learn, reflect, and better understand the many ways we experience grief and loss.\n\n📅 Wednesday, 23 September 2026\n\n🕡 6:30 PM – 8:00 PM\n\n📍 LC 301\n\n*A space to pause. Reflect. Understand.*\n\nClick on the link to Register: https://docs.google.com/forms/d/e/1FAIpQLSew6f3YYBZ70iFa5xeUmbVYXrtjpYUW4WGXN4kyf_7-gmWS8g/viewform?usp=header\n\nRegards,\n\nTeam Flourishing Hub\n\nIIT Bombay",
+      "date": "Wed, 23 Sep",
+      "time": "6:30 PM",
+      "venue": "Lecture Hall Complex (LHC) · LC 301",
+      "clubs": [
+        "flourishing-hub"
+      ],
+      "poster": "/assets/live/understanding-grief--an-open-workshop-bec60894.jpg",
+      "website": "https://www.flourishing-iitb.org/",
+      "interested": 0,
+      "going": 1,
+      "weight": 400,
+      "createdAt": 1790013508983,
+      "startsAt": 1790168400000
+    },
+    {
+      "id": "calisthenics-sessions-for-beginners-and-advance-2264cd22",
+      "sourceId": "2264cd22-5ab9-4193-acfd-35136b867c84",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Calisthenics Sessions for Beginners and Advance",
+      "description": "Greetings from the Institute Sports Council!\n\nWe’re excited to announce that registrations for **Beginner and Advanced Calisthenics classes** are now open!\n\nCalisthenics is a form of strength and fitness training that primarily uses bodyweight as resistance. The sessions focus on developing **strength, mobility, flexibility, endurance, balance, and body control** through progressive training and skill-based exercises.\n\n### **Details of the sessions:**\n\n**Date:** Starting from 16th September, 2026\n**Venue:** Screening Room, 3rd Floor (New SAC, opp. Hostel-11)\n**Days:** Mon-Wed-Fri (3 sessions/week)\n\n**Beginner Calisthenics:** 7:30 - 8:30 pm\n**Registration Link:** https://forms.gle/M8Xqwirx2Nn2WgfC7\n\n**Advanced Calisthenics:** 8:30 - 9:30 pm\n**Registration Link:** https://forms.gle/tmyEiSLxJqY55FpB9\n\n### **Advanced Calisthenics – Training Focus**\n\nThe advanced sessions will focus on progressive development of:\n\n1. Hand Balancing & Handstand\n2. Headstand\n3. Upper-body strength & endurance\n4. Push-up variations\n5. Pistol Squats\n6. Side Splits & Front Splits\n7. Running & endurance training\n8. Other progressive calisthenics skills and movements\n\n**Deadline to register:** 15th September, 2026, 11:59 PM\n\n### **Important Instructions:**\n\n1. Sessions will begin promptly at the scheduled time. No late entries or extended sessions.\n2. Participants are requested to wear comfortable sportswear and carry a water bottle.\n3. Participants should register for the appropriate level based on their current fitness and calisthenics experience.\n4. There is no refund policy (partial or full) once payment is made, as processing refunds can take several months.\n\n**For any queries, please contact:**\n\nOm Salunke,\nFitness Club Manager\nM: [number removed]\n\nUntil. Victory. Always.\n\nSportingly,\nDeepraj Singh Kasherwal\nGeneral Secretary, Sports Affairs\nIIT Bombay\n[number removed]",
+      "date": "Wed, 16 Sep – 12 Oct",
+      "time": "7:30 PM",
+      "venue": "New SAC (Students Activity Centre) · Sceening Room",
+      "clubs": [
+        "gssa"
+      ],
+      "interested": 0,
+      "going": 8,
+      "weight": 434.78260869565224,
+      "createdAt": 1788616758523,
+      "startsAt": 1789567200000
+    },
+    {
+      "id": "regular-sessions-for-zumba-and-pilates-c58e0cd1",
+      "sourceId": "c58e0cd1-1f92-4493-8d30-646b00207872",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Regular Sessions for Zumba and Pilates",
+      "description": "Greetings from the Institute Sports Council!\n\nWe’re excited to announce that registrations for Zumba and Pilates classes are now open!\nZumba is a high-energy fitness program that combines music with dance moves. It’s a fun and effective way to improve cardiovascular health, coordination, and overall fitness.\n\nPilates focuses on strengthening the body with an emphasis on core stability, posture, flexibility, and controlled movement. It's great for both beginners and experienced fitness enthusiasts.\n\nDetails of both the sessions:\n\nDate: Starting from 16th September, 2026\nVenue: Screening room, 3rd floor (New SAC, opp. Hostel-11)\nDays: Mon-Wed-Fri (3 sessions/week)\nTiming for Pilates: 5:30 pm to 6:25 pm\nLink to register for Pilates: https://forms.gle/EgmtVQPgeUM1yZ9W9\nTiming for Zumba: 6:30 pm to 7:30 pm\nLink to register for Zumba: https://forms.gle/eP3ceWJQUVWLdX2k7\n\nDeadline to register: 15th September, 2026 11:59 pm.\nImportant instructions:\n* Sessions will begin promptly at 5:30 PM and end at 7:30 PM. No late\nentries or extended sessions.\n* There is no refund policy (partial or full) once payment is made, as\nprocessing refunds can take several months.\n\n\n\nFor any queries, please contact:\nOm Salunke\nFitness Club Manager\nM: [number removed]\n\n\nUntil. Victory. Always.\nSportingly,\nDeepraj Singh Kasherwal\nGeneral Secretary, Sports Affairs\nIIT Bombay\n[number removed]",
+      "date": "Wed, 16 Sep – 12 Oct",
+      "time": "5:30 PM",
+      "venue": "New SAC (Students Activity Centre) · Screening Room",
+      "clubs": [
+        "gssa"
+      ],
+      "interested": 0,
+      "going": 4,
+      "weight": 434.78260869565224,
+      "createdAt": 1788545286199,
+      "startsAt": 1789560000000
+    },
+    {
+      "id": "mosaic-expressive-arts-therapy-b21ca0bd",
+      "sourceId": "b21ca0bd-0624-4c52-a879-06d96606a51d",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "MOSAIC: Expressive Arts Therapy",
+      "description": "SWC is back with MOSAIC: A Therapeutic Experience — a monthly series of therapeutic sessions exploring emotional well-being through creative approaches.\n\nThis month, experience Expressive Arts Therapy through two group sessions:\n\n💫 9th Sept (Wednesday) | Post Cards of Hope\n\n🤝 23rd Sept (Wednesday) | Building a Clay Model of Hope and Resilience\n\nFacilitator: Manasi Likhite\n\n⏰ 6:30 PM onwards\n\n📍 LT-202 LHC-1 (2nd Floor)\n\n👥 20 students per session | Students only\n\nYou don’t have to be “good at art” to take part. Come with an open mind and explore how creative expression can help you pause, reflect, and connect.\n\n👉 Register: https://forms.gle/khYgPAVKTtrjsx6WA\n\nRegistrations will close once the batch is full.",
+      "date": "Wed, 9 Sep – 23 Sep",
+      "time": "6:30 PM",
+      "venue": "Lecture Hall Complex (LHC) · LT-202 LHC-1 (2nd Floor)",
+      "clubs": [
+        "swc"
+      ],
+      "poster": "/assets/live/mosaic-expressive-arts-therapy-b21ca0bd.jpg",
+      "interested": 0,
+      "going": 7,
+      "weight": 400,
+      "createdAt": 1788786981787,
+      "startsAt": 1788958800000
+    },
+    {
+      "id": "peer-connect---a-safe-space-b55abc7c",
+      "sourceId": "b55abc7c-33a7-473d-8a83-167db1028718",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "Peer Connect - A Safe Space",
+      "description": "Looking for a safe space to meet new people, connect with peers, and have meaningful conversations beyond academics? Peer Connect is a space to connect, unwind, and talk about things that matter — from everyday experiences to wellbeing and mental health. No pressure, no expectations. Just come as you are!\n\nWhether you come with friends or show up solo, you’re more than welcome. 💛\n\n✨ Open to ONLY PG & PhD students across ALL departments!\n\n📅 Date: 8th September, Tuesday\n\n🕕 Time: 6:15 PM\n\n📍 Venue: Room 105, Mathematics Department\n\n🔗 Register here: https://forms.gle/UwwUp3i72WUAc1UT6",
+      "date": "Tue, 8 Sep",
+      "time": "6:15 PM",
+      "venue": "Maths · Room-105",
+      "clubs": [
+        "swc"
+      ],
+      "poster": "/assets/live/peer-connect---a-safe-space-b55abc7c.jpg",
+      "interested": 0,
+      "going": 3,
+      "weight": 400,
+      "createdAt": 1788786540893,
+      "startsAt": 1788871500000
+    },
+    {
+      "id": "dhaga-an-art-exhibition--call-for-entries-24567664",
+      "sourceId": "24567664-2258-4c0f-befc-67f2e9afc3dd",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "pending",
+      "title": "DHAGA: An Art Exhibition + Call for Entries",
+      "description": "In observance of Suicide Prevention Day 2026, the Student Wellness Centre (SWC), IIT Bombay, is organizing DHAGA — A Thread of Hope, an art exhibition weaving together creativity, connection, and messages of hope. 🌱\n\nThe exhibition is open to the IIT Bombay community as well as artists from outside IIT Bombay, including those from Mumbai and other parts of India.\n\n📅 Date: Thursday, 10th September 2026\n\n📍 Venue: 1st Floor Foyer (Near SHIRU Cafe), Lecture Hall Complex-2, IIT Bombay\n\n🕚 Timings: 11:00 AM to 8:00 PM\n\n👥 Open to EVERYONE:  IIT Bombay community and individuals from across Mumbai and India\n\nYou can participate by visiting the exhibition or submitting your artwork, such as a painting, drawing, design, sketch, etc.\n\nArtwork Submission Deadline: 7th September 2026, 11:59 pm 💛\n\n📲 Submit / Know more: https://forms.gle/6kn7aw7zD7tJEHHv9\n\nFor any questions or concerns, feel free to reach out to us at events.swc@iitb.ac.in / +918356810299. We're happy to help!",
+      "date": "Tue, 1 Sep – 10 Sep",
+      "time": "1:00 PM",
+      "venue": "Lecture Hall Complex (LHC) · 1st Floor Foyer, Near Shiru Cafe, LHC 2",
+      "clubs": [
+        "swc"
+      ],
+      "poster": "/assets/live/dhaga-an-art-exhibition--call-for-entries-24567664.jpg",
+      "website": "https://swc.iitb.ac.in/news/dhaga-thread-hope",
+      "interested": 0,
+      "going": 6,
+      "weight": 400,
+      "createdAt": 1788248552112,
+      "startsAt": 1788247847304
+    },
+    {
+      "id": "wildlife-club-b43e2c19",
+      "sourceId": "b43e2c19-acce-4961-a836-5fd825232d5a",
+      "type": "event",
+      "typeReason": "default",
+      "apiStatus": "approved",
+      "title": "wildlife club",
+      "description": "Hello Students,\n\nWe are excited to announce that the **Institute Sports Council is reviving the Wildlife Club**!\n\nThe Wildlife Club aims to bring together students who are passionate about nature, wildlife, conservation, and exploring the outdoors. As part of the club, we are planning a variety of exciting activities and events throughout the year, including bird-watching sessions, sanctuary visits, nature walks, wildlife photography, awareness activities, and much more.\n\nWhether you are an experienced nature enthusiast or simply curious to learn more about the world around you, everyone is welcome to be a part of this initiative.\n\nTo join the club and stay updated about upcoming events, please:\n\nFill out the Google Form:\nhttps://forms.gle/MshHBykHzzS99ED78\n\nJoin the WhatsApp Community\nhttps://chat.whatsapp.com/KaSWzZS5N3rB5FGb1TbaMa?mode=gi_t\n\nThe WhatsApp community will be used to share event announcements, updates, registrations, and other information related to the club.\n\nWe look forward to building an enthusiastic community of students who can explore, learn, and appreciate wildlife together.\nSee you in the wild!\n\nRegards,\n\nInstitute Sports Council\n\nIshanei - [number removed]\nSayam - 774242632\n\nUntil. Victory. Always.\nSportingly,\nDeepraj Singh Kasherwal\nGeneral Secretary, Sports Affairs\nIIT Bombay\n[number removed]\nhttps://gymkhana.iitb.ac.in/sports/",
+      "date": "Tue, 1 Sep – 12 Sep",
+      "time": "",
+      "venue": "Lake Side",
+      "clubs": [
+        "gssa"
+      ],
+      "poster": "/assets/live/wildlife-club-b43e2c19.jpg",
+      "interested": 1,
+      "going": 9,
+      "weight": 400,
+      "createdAt": 1788283175059,
+      "startsAt": 1788201015211
+    },
+    {
+      "id": "industrial-learning-program-yearlong-6fe4313d",
+      "sourceId": "6fe4313d-7023-4520-8fea-35a1df13f932",
+      "type": "announcement",
+      "typeReason": "runs 365 days",
+      "apiStatus": "pending",
+      "title": "Industrial Learning Program (Yearlong)",
+      "description": "Why wait for internship season to build real skills? Industrial Learning Program (ILP) now offers year-round access to live internships and research projects with direct IITB alumni guidance.\n\nWork on real-world challenges, explore what actually interests you and build your career edge on your own terms.\n\nJoin the community now to get all essential updates: https://chat.whatsapp.com/HWVRxCw1E1W23W9vuIs5mK?s=cl&p=a&ilr=1",
+      "date": "Tue, 21 Jul – 21 Jul 2027",
+      "time": "",
+      "venue": "Online",
+      "clubs": [
+        "sarc"
+      ],
+      "poster": "/assets/live/industrial-learning-program-yearlong-6fe4313d.jpg",
+      "website": "https://chat.whatsapp.com/HWVRxCw1E1W23W9vuIs5mK?s=cl&p=a&ilr=1",
+      "interested": 0,
+      "going": 14,
+      "weight": 52.083333333333336,
+      "createdAt": 1784653901322,
+      "startsAt": 1784572243417
+    }
+  ]
+}

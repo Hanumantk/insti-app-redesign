@@ -1,0 +1,12 @@
+[
+  {
+    "date": "2026-10-10",
+    "scope": "app",
+    "macrostructure": "review workspace (master-detail) + ecosystem-index browse + split detail/form",
+    "theme": "custom",
+    "theme_axes": "light / grotesk-sans / cool",
+    "vibe": "Insti blue, cool paper, friendly pills",
+    "enrichment": "none",
+    "brief": "Insti App redesign — GSHA/GSec review on a laptop, tone kept from the Figma build"
+  }
+]
