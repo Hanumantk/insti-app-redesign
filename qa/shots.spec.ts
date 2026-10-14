@@ -18,6 +18,7 @@ const SHOTS: Shot[] = [
   { name: 'event-gsec-1440', path: `/event/${LIVE.pendingSubmission}`, role: 'gsec', ...LAPTOP },
   { name: 'form-gsha-1440', path: '/event/new', role: 'gsha', ...LAPTOP, full: true },
   { name: 'filter-1440', path: '/home?drawer=filter', role: 'student', ...LAPTOP },
+  { name: 'filter-competitions-1440', path: '/home?drawer=filter-competitions', role: 'student', ...LAPTOP },
   { name: 'approvals-gsec-1280', path: '/home?tab=approvals', role: 'gsec', w: 1280, h: 800 },
   { name: 'home-student-390', path: '/home', role: 'student', w: 390, h: 844, full: true },
   { name: 'event-student-390', path: `/event/${LIVE.withPoster.id}`, role: 'student', w: 390, h: 844, full: true },

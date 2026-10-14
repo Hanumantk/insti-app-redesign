@@ -21,6 +21,8 @@
   }
   h1, h2, h3 { color: var(--color-ink); font-family: var(--font-display); font-style: normal; overflow-wrap: anywhere; min-width: 0; }
   input, textarea, select { font: inherit; color: inherit; }
+  /* Fieldsets default to min-width: min-content, which lets long rows push a sheet wider than itself. */
+  fieldset { min-width: 0; }
   :focus { outline: none; }
   :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
   ::selection { background: var(--color-accent-tint); }

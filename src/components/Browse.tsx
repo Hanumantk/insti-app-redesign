@@ -171,8 +171,8 @@ function useReducedMotion() {
 
 /** A titled row of cards: arrows + scroll-snap, no visible scrollbar. */
 export function CardRow({
-  title, items, testId, filterCount, onFilter, empty,
-}: { title: string; items: InstiEvent[]; testId: string; filterCount?: number; onFilter?: () => void; empty?: ReactNode }) {
+  title, items, testId, filterCount, onFilter, filterTestId, empty,
+}: { title: string; items: InstiEvent[]; testId: string; filterCount?: number; onFilter?: () => void; filterTestId?: string; empty?: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null)
   const [edge, setEdge] = useState({ start: true, end: false })
   const update = () => {
@@ -192,7 +192,7 @@ export function CardRow({
       <div className="flex items-center gap-2">
         <h2 className="mr-auto text-xl font-bold">{title}</h2>
         {onFilter && (
-          <button className="btn btn-secondary" onClick={onFilter} data-testid="filter-by">
+          <button className="btn btn-secondary" onClick={onFilter} aria-label={`Filter by: ${title}${filterCount ? `, ${filterCount} active` : ''}`} data-testid={filterTestId}>
             <Funnel size={16} aria-hidden />
             Filter by
             {!!filterCount && <span className="tnum grid size-5 place-items-center rounded-pill bg-accent text-xs text-accent-ink">{filterCount}</span>}

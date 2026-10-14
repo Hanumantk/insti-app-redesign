@@ -18,6 +18,9 @@ export interface Filters {
   search: string
 }
 
+/** Feed rows that have their own Filter by sheet. */
+export type FilterKind = 'event' | 'competition'
+
 /** What an Undo needs to put back. */
 export type Snapshot = Pick<InstiEvent, 'id' | 'status' | 'rejectionComment' | 'history'>
 
@@ -31,7 +34,7 @@ interface AppState {
   role: Role
   events: InstiEvent[]
   reactions: Record<string, { interested?: boolean; going?: boolean }>
-  filters: Filters
+  filters: Record<FilterKind, Filters>
   toast: Toast | null
   setRole: (r: Role) => void
   toggleReaction: (id: string, kind: 'interested' | 'going') => void
@@ -43,20 +46,23 @@ interface AppState {
   restore: (s: Snapshot) => void
   showToast: (t: Omit<Toast, 'id'>) => void
   dismissToast: () => void
-  toggleDay: (d: Day) => void
-  toggleClub: (c: string) => void
-  setSearch: (s: string) => void
-  clearFilters: () => void
+  toggleDay: (k: FilterKind, d: Day) => void
+  toggleClub: (k: FilterKind, c: string) => void
+  setSearch: (k: FilterKind, s: string) => void
+  clearFilters: (k: FilterKind) => void
   resetDemo: () => void
 }
 
 const emptyFilters: Filters = { days: [], clubs: [], search: '' }
+const noFilters: Record<FilterKind, Filters> = { event: emptyFilters, competition: emptyFilters }
 const step = (kind: HistoryEntry['kind'], by: HistoryEntry['by'], comment?: string): HistoryEntry => ({ kind, by, comment, at: Date.now() })
 const snap = (e: InstiEvent): Snapshot => ({ id: e.id, status: e.status, rejectionComment: e.rejectionComment, history: e.history })
 
 export const useApp = create<AppState>()(
   persist(
     (set, get) => {
+      const setFilters = (k: FilterKind, fn: (f: Filters) => Partial<Filters>) =>
+        set((s) => ({ filters: { ...s.filters, [k]: { ...s.filters[k], ...fn(s.filters[k]) } } }))
       const patch = (id: string, fn: (e: InstiEvent) => Partial<InstiEvent>) =>
         set((s) => ({ events: s.events.map((e) => (e.id === id ? { ...e, ...fn(e) } : e)) }))
 
@@ -64,7 +70,7 @@ export const useApp = create<AppState>()(
         role: 'student',
         events: buildSeed(),
         reactions: {},
-        filters: emptyFilters,
+        filters: noFilters,
         toast: null,
         setRole: (role) => set({ role }),
         toggleReaction: (id, kind) =>
@@ -109,17 +115,11 @@ export const useApp = create<AppState>()(
         restore: (s) => patch(s.id, () => ({ status: s.status, rejectionComment: s.rejectionComment, history: s.history })),
         showToast: (t) => set({ toast: { ...t, id: Date.now() } }),
         dismissToast: () => set({ toast: null }),
-        toggleDay: (d) =>
-          set((s) => ({
-            filters: { ...s.filters, days: s.filters.days.includes(d) ? s.filters.days.filter((x) => x !== d) : [...s.filters.days, d] },
-          })),
-        toggleClub: (c) =>
-          set((s) => ({
-            filters: { ...s.filters, clubs: s.filters.clubs.includes(c) ? s.filters.clubs.filter((x) => x !== c) : [...s.filters.clubs, c] },
-          })),
-        setSearch: (search) => set((s) => ({ filters: { ...s.filters, search } })),
-        clearFilters: () => set({ filters: emptyFilters }),
-        resetDemo: () => set({ events: buildSeed(), reactions: {}, filters: emptyFilters, toast: null }),
+        toggleDay: (k, d) => setFilters(k, (f) => ({ days: f.days.includes(d) ? f.days.filter((x) => x !== d) : [...f.days, d] })),
+        toggleClub: (k, c) => setFilters(k, (f) => ({ clubs: f.clubs.includes(c) ? f.clubs.filter((x) => x !== c) : [...f.clubs, c] })),
+        setSearch: (k, search) => setFilters(k, () => ({ search })),
+        clearFilters: (k) => setFilters(k, () => emptyFilters),
+        resetDemo: () => set({ events: buildSeed(), reactions: {}, filters: noFilters, toast: null }),
       }
     },
     {

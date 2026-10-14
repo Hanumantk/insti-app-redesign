@@ -1,43 +1,45 @@
 import { Check, MagnifyingGlass } from '@phosphor-icons/react'
 import { CLUBS } from '../data/seed'
 import { clubMatches } from '../lib/events'
-import { useApp, type Day } from '../store/useApp'
+import { useApp, type Day, type FilterKind } from '../store/useApp'
 import { Sheet } from './Sheet'
 import { ClubMark } from './ui'
 
 
 
 /**
- * 143:874 rebuilt as a sheet. Day chips and clubs filter the Events row.
+ * 143:874 rebuilt as a sheet. Day chips and clubs filter one feed row (Events or Competitions);
+ * each row keeps its own selection.
  * The Figma file drew eight identical "Pixels" tiles; this lists each club once.
  * The Date/Month and time fields are dropped — no event data backs them.
  * Day chips are the weekdays events in the feed start on (live data, so they change with each sync).
  */
-export function FilterSheet({ onClose, resultCount, days }: { onClose: () => void; resultCount: number; days: Day[] }) {
-  const f = useApp((s) => s.filters)
-  const toggleDay = useApp((s) => s.toggleDay)
-  const toggleClub = useApp((s) => s.toggleClub)
-  const setSearch = useApp((s) => s.setSearch)
-  const clear = useApp((s) => s.clearFilters)
+export function FilterSheet({ kind, onClose, resultCount, days }: { kind: FilterKind; onClose: () => void; resultCount: number; days: Day[] }) {
+  const f = useApp((s) => s.filters[kind])
+  const toggleDay = (d: Day) => useApp.getState().toggleDay(kind, d)
+  const toggleClub = (c: string) => useApp.getState().toggleClub(kind, c)
+  const setSearch = (q: string) => useApp.getState().setSearch(kind, q)
+  const clear = () => useApp.getState().clearFilters(kind)
+  const noun = kind === 'event' ? ['event', 'events'] : ['competition', 'competitions']
   const clubs = Object.keys(CLUBS).filter((c) => clubMatches(c, f.search))
   const active = f.days.length + f.clubs.length
 
   return (
     <Sheet
-      title="Filter by"
+      title={kind === 'event' ? 'Filter events' : 'Filter competitions'}
       onClose={onClose}
       testId="filter-panel"
       footer={
         <div className="flex items-center justify-between gap-3">
           <button className="btn btn-ghost" onClick={clear} disabled={!active} data-testid="filter-clear">Clear all</button>
           <button className="btn btn-primary" onClick={onClose} data-testid="filter-apply">
-            Show {resultCount} {resultCount === 1 ? 'event' : 'events'}
+            Show {resultCount} {noun[resultCount === 1 ? 0 : 1]}
           </button>
         </div>
       }
     >
       <div className="grid gap-8 px-6 py-6">
-        <fieldset>
+        {days.length > 0 && <fieldset>
           <legend className="field-label">Day</legend>
           <div className="flex flex-wrap gap-2">
             {days.map((d) => {
@@ -56,7 +58,7 @@ export function FilterSheet({ onClose, resultCount, days }: { onClose: () => voi
               )
             })}
           </div>
-        </fieldset>
+        </fieldset>}
 
         <fieldset>
           <legend className="field-label">Clubs</legend>

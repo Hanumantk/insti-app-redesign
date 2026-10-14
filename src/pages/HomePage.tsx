@@ -9,7 +9,7 @@ import { TopBar } from '../components/TopBar'
 import { CountBadge, Page } from '../components/ui'
 import type { Role } from '../data/types'
 import { activeFilterCount, applyFilters, byType, feedItems, queueFor, weekdaysOf } from '../lib/events'
-import { useApp } from '../store/useApp'
+import { useApp, type FilterKind } from '../store/useApp'
 
 type Tab = 'recommended' | 'status' | 'approvals'
 
@@ -33,8 +33,9 @@ export function HomePage() {
   const pendingForGsec = useMemo(() => queueFor(events, 'gsec').filter((e) => e.status === 'pending').length, [events])
   const rejectedForGsha = useMemo(() => queueFor(events, 'gsha').filter((e) => e.status === 'rejected').length, [events])
   const allEvents = byType(events, 'event')
-  const evs = applyFilters(allEvents, filters)
-  const comps = byType(events, 'competition')
+  const evs = applyFilters(allEvents, filters.event)
+  const allComps = byType(events, 'competition')
+  const comps = applyFilters(allComps, filters.competition)
   const reviewing = tab !== 'recommended'
   const waitingByType = useMemo(() => {
     const w = { event: 0, competition: 0, announcement: 0 }
@@ -74,24 +75,28 @@ export function HomePage() {
                 title="Events"
                 items={evs}
                 testId="events-row"
-                filterCount={activeFilterCount(filters)}
+                filterCount={activeFilterCount(filters.event)}
                 onFilter={() => openDrawer('filter')}
-                empty={
-                  activeFilterCount(filters) ? (
-                    <p className="py-8 text-sm text-muted">No events match these filters. <button className="font-medium text-accent-strong underline underline-offset-4" onClick={() => useApp.getState().clearFilters()}>Clear filters</button></p>
-                  ) : (
-                    <EmptyRow kind="event" role={role} waiting={waitingByType.event} />
-                  )
-                }
+                filterTestId="filter-by"
+                empty={activeFilterCount(filters.event) ? <NoMatches kind="event" /> : <EmptyRow kind="event" role={role} waiting={waitingByType.event} />}
               />
-              <CardRow title="Competitions" items={comps} testId="competitions-row" empty={<EmptyRow kind="competition" role={role} waiting={waitingByType.competition} />} />
+              <CardRow
+                title="Competitions"
+                items={comps}
+                testId="competitions-row"
+                filterCount={activeFilterCount(filters.competition)}
+                onFilter={() => openDrawer('filter-competitions')}
+                filterTestId="filter-by-competitions"
+                empty={activeFilterCount(filters.competition) ? <NoMatches kind="competition" /> : <EmptyRow kind="competition" role={role} waiting={waitingByType.competition} />}
+              />
             </Page>
           </main>
           <Footer />
         </>
       )}
 
-      {drawer === 'filter' && <FilterSheet onClose={closeDrawer} resultCount={evs.length} days={weekdaysOf(allEvents)} />}
+      {drawer === 'filter' && <FilterSheet kind="event" onClose={closeDrawer} resultCount={evs.length} days={weekdaysOf(allEvents)} />}
+      {drawer === 'filter-competitions' && <FilterSheet kind="competition" onClose={closeDrawer} resultCount={comps.length} days={weekdaysOf(allComps)} />}
     </>
   )
 }
@@ -117,6 +122,15 @@ function Tabs({ role, active, pending, rejected }: { role: Role; active: Tab; pe
         </Link>
       ))}
     </nav>
+  )
+}
+
+function NoMatches({ kind }: { kind: FilterKind }) {
+  return (
+    <p className="py-8 text-sm text-muted">
+      No {kind === 'event' ? 'events' : 'competitions'} match these filters.{' '}
+      <button className="font-medium text-accent-strong underline underline-offset-4" onClick={() => useApp.getState().clearFilters(kind)}>Clear filters</button>
+    </p>
   )
 }
 

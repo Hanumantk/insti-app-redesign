@@ -135,6 +135,18 @@ test('feed = live insti.app posts + restored Figma posts; filters; sheets close'
   await expect(events).toHaveCount(1)
   await expect(events.first()).toContainText('Peer Connect: A Listening Listening Circle for PhD')
 
+  // Competitions have their own filter; the Events filter above is left alone.
+  await page.getByTestId('filter-by-competitions').click()
+  await page.getByTestId('club-tile').filter({ hasText: 'Pixels' }).click()
+  const m = Number((await page.getByTestId('filter-apply').textContent())!.match(/\d+/)![0])
+  await page.getByTestId('filter-apply').click()
+  await expect(comps).toHaveCount(m)
+  await expect(events).toHaveCount(1)
+  await page.getByTestId('filter-by-competitions').click()
+  await page.getByTestId('filter-clear').click()
+  await page.getByTestId('filter-apply').click()
+  await expect(comps).toHaveCount(liveCount('competition') + 4)
+
   // Announcements slide in the hero slot: live notices + the four Figma ones.
   const carousel = page.getByTestId('announcements-carousel')
   const slides = carousel.getByTestId('announcement-slide')
