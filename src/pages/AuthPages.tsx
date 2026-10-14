@@ -10,7 +10,7 @@ import { A } from '../lib/assets'
  */
 function Stage({ children }: { children: ReactNode }) {
   return (
-    <div className="relative grid min-h-dvh place-items-center overflow-hidden bg-paper px-gutter py-12">
+    <div className="relative grid min-h-[var(--vh-full)] place-items-center overflow-hidden bg-paper px-gutter py-12">
       <div className="pointer-events-none absolute bottom-0 left-0 h-[639px] w-[544px] origin-bottom-left scale-[var(--sq)]" aria-hidden>
         <img alt="" src={A.squiggleLeft} className="absolute left-0 top-0 h-[580.309px] w-[730.454px] max-w-none origin-top-left" style={{ transform: 'matrix(-0.969, -0.247, -0.247, 0.969, 544.291, 180.735)' }} />
       </div>

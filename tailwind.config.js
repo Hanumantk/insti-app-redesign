@@ -78,9 +78,6 @@ export default {
         'sheet-out': '180ms',
         slide: '480ms',
       },
-      maxWidth: {
-        page: '1440px',
-      },
     },
   },
   plugins: [],
