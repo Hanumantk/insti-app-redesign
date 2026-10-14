@@ -13,7 +13,7 @@ export function EventCard({ e }: { e: InstiEvent }) {
     <Link
       to={`/event/${e.id}`}
       className={`card-hover group flex w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-card border bg-surface ${
-        callout ? 'border-accent ring-1 ring-accent' : 'border-rule'
+        callout ? 'border-accent ring-[3px] ring-accent' : 'border-rule'
       }`}
       data-testid="event-card"
     >
