@@ -58,7 +58,7 @@ export function HomePage() {
     <>
       <TopBar />
       {reviewing ? (
-        <main className="flex h-[calc(var(--vh-full)-var(--topbar-h))] flex-col">
+        <main className="flex h-[calc(100dvh-var(--topbar-h))] flex-col">
           {header}
           <div className="flex min-h-0 w-full flex-1 flex-col lg:px-gutter">
             <ReviewWorkspace role={tab === 'status' ? 'gsha' : 'gsec'} />

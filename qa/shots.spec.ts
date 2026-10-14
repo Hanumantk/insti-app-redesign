@@ -34,8 +34,6 @@ for (const s of SHOTS) {
     await page.evaluate(() => document.fonts.ready)
     if (s.setup === 'reject') await page.getByTestId('page-reject').click()
     await page.waitForTimeout(400)
-    // CSS zoom (90% on desktop) inflates Playwright's full-page size; clip to the real scroll extent.
-    const size = await page.evaluate(() => ({ width: document.documentElement.scrollWidth, height: document.documentElement.scrollHeight }))
-    await page.screenshot({ path: `qa/shots/${s.name}.png`, fullPage: !!s.full, clip: s.full ? { x: 0, y: 0, ...size } : undefined })
+    await page.screenshot({ path: `qa/shots/${s.name}.png`, fullPage: !!s.full })
   })
 }

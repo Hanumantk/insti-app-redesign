@@ -63,7 +63,7 @@ one `--color-rule` border; a soft shadow only on hover for clickable cards.
 
 ## Spacing
 4-point named scale (`--space-1` 4px … `--space-16` 64px) in `src/styles/tokens.css`.
-Page gutter: fixed 16px (phone) · 32px (≥640) · 48px (≥1024), the same on every page, bar and footer; content runs full width between them. Desktop (≥1024) renders at 90% via `zoom` on `html` — use `var(--vh-full)`, not `100dvh`, for full-height layouts.
+Page gutter: fixed 16px (phone) · 32px (≥640) · 48px (≥1024), the same on every page, bar and footer; content runs full width between them.
 
 ## Radii
 card 16 · panel 20 · input 10 · tile 12 · pill 999. Buttons are pills (tone kept).

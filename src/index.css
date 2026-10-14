@@ -11,7 +11,6 @@
 
 @layer base {
   html, body { overflow-x: clip; }
-  html { zoom: var(--zoom); }
   body {
     background: var(--color-paper);
     color: var(--color-ink-2);
