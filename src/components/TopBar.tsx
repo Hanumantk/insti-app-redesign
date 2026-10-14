@@ -9,7 +9,7 @@ import { LotusMark } from './Brand'
 export function TopBar() {
   return (
     <header className="sticky top-0 z-30 h-topbar border-b border-rule bg-surface">
-      <div className="flex h-full items-center gap-6 px-gutter">
+      <div className="mx-auto flex h-full max-w-page items-center gap-6 px-gutter">
         <Link to="/home" className="flex shrink-0 items-center gap-2 rounded-pill" aria-label="Insti App home">
           <LotusMark size={36} />
           <span className="whitespace-nowrap font-wordmark text-[26px] font-extrabold leading-none tracking-[-0.01em] text-ink">Insti App</span>

@@ -82,7 +82,7 @@ const initials = (name: string) =>
   name.replace(/\(.*?\)/g, '').split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase()
 
 export function Page({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return <div className={`w-full px-gutter ${className}`}>{children}</div>
+  return <div className={`mx-auto w-full max-w-page px-gutter ${className}`}>{children}</div>
 }
 
 /** Renders "**x**" as Medium; keeps blank lines. */
