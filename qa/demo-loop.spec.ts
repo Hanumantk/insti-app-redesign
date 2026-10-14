@@ -115,6 +115,9 @@ test('feed = live insti.app posts + restored Figma posts; filters; sheets close'
   await expect(page.getByTestId('events-row')).toContainText('Literarium All Team Meet')
   await expect(page.getByTestId('competitions-row')).toContainText('AI-ML GC 2025-26 | Web and Coding Club')
   await expect(events.first()).toContainText(LIVE.events.find((e) => e.type === 'event')!.title)
+  // Called-out cards: accent border with a label on the top edge.
+  await expect(page.getByTestId('events-row').getByTestId('card-callout').filter({ hasText: 'Psychological First Aid 4 Module Course' })).toContainText('Today')
+  await expect(page.getByTestId('competitions-row').getByTestId('card-callout').filter({ hasText: 'Inter IIT Pre-Camp Trials' })).toContainText('Deadline today')
 
   // Day chips come from the data; pick the first one and check the count it promises.
   await page.getByTestId('filter-by').click()

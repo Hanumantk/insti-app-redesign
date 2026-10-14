@@ -2,16 +2,19 @@ import { CaretLeft, CaretRight, Funnel, Megaphone } from '@phosphor-icons/react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import type { InstiEvent } from '../data/types'
-import { hostName, posterFor } from '../lib/events'
+import { CARD_CALLOUT, hostName, posterFor } from '../lib/events'
 import { EventMeta, Poster } from './ui'
 
 /** Feed card — 280px wide (5 per row at 1512), poster on Figma's own 415:391 crop. */
 export function EventCard({ e }: { e: InstiEvent }) {
   const p = posterFor(e, 'card')
-  return (
+  const callout = CARD_CALLOUT[e.id]
+  const card = (
     <Link
       to={`/event/${e.id}`}
-      className="card-hover group flex w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-card border border-rule bg-surface"
+      className={`card-hover group flex w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-card border bg-surface ${
+        callout ? 'border-accent ring-1 ring-accent' : 'border-rule'
+      }`}
       data-testid="event-card"
     >
       <Poster src={p.src} label={hostName(e)} className="aspect-[415/391] w-full border-b border-rule" />
@@ -20,6 +23,16 @@ export function EventCard({ e }: { e: InstiEvent }) {
         <EventMeta e={e} className="mt-auto" />
       </div>
     </Link>
+  )
+  if (!callout) return card
+  // The label sits on the card's top border, so it lives outside the card's overflow clip.
+  return (
+    <div className="relative flex shrink-0 snap-start" data-testid="card-callout">
+      <span className="absolute -top-3 left-4 z-10 inline-flex h-6 items-center whitespace-nowrap rounded-pill bg-accent px-3 text-xs font-medium text-accent-ink">
+        {callout}
+      </span>
+      {card}
+    </div>
   )
 }
 
@@ -195,7 +208,7 @@ export function CardRow({
       <div
         ref={ref}
         onScroll={update}
-        className="scroll-row -mx-gutter mt-4 flex [contain:paint] snap-x snap-mandatory scroll-px-gutter gap-4 overflow-x-auto px-gutter pb-4"
+        className="scroll-row -mx-gutter mt-1 flex [contain:paint] snap-x snap-mandatory scroll-px-gutter gap-4 overflow-x-auto px-gutter pb-4 pt-3"
         data-testid={testId}
       >
         {items.map((e) => <EventCard key={e.id} e={e} />)}

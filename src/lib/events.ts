@@ -49,6 +49,15 @@ export const posterFor = (e: InstiEvent, kind: 'card' | 'status' | 'hero' | 'det
   return { src: pick, cover: kind !== 'detail' }
 }
 
+/**
+ * Feed cards called out with an accent border and a label on their top edge. Keyed by id rather
+ * than stored on the event so feeds already saved in a visitor's browser pick it up too.
+ */
+export const CARD_CALLOUT: Record<string, string> = {
+  'psychological-first-aid-4-module-course-f1bc038d': 'Today',
+  'inter-iit-pre-camp-trials-4a05ef29': 'Deadline today',
+}
+
 export const dateLabel = (e: InstiEvent) => (e.deadline ?? e.date).trim()
 
 /** "just now", "4 min ago", "Tue 14:02" — for history steps recorded during the demo. */
