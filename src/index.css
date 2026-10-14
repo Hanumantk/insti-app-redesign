@@ -86,6 +86,9 @@
   @media (hover: hover) { .card-hover:hover { box-shadow: var(--shadow-hover); } }
   .card-hover:active { transform: translateY(1px); }
 
+  /* Text and icons sitting on an accent fill (called-out feed cards). */
+  .on-accent { --color-ink: var(--color-accent-ink); --color-ink-2: oklch(99.5% 0.004 262 / 0.9); --color-muted: oklch(99.5% 0.004 262 / 0.75); --color-accent: var(--color-accent-ink); }
+
   .scroll-row { scrollbar-width: thin; scrollbar-color: var(--color-rule-strong) transparent; }
 }
 

@@ -12,13 +12,13 @@ export function EventCard({ e }: { e: InstiEvent }) {
   const card = (
     <Link
       to={`/event/${e.id}`}
-      className={`card-hover group flex w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-card border bg-surface ${
-        callout ? 'border-accent ring-[3px] ring-accent' : 'border-rule'
+      className={`card-hover group flex w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-card border ${
+        callout ? 'border-accent bg-accent ring-[3px] ring-accent' : 'border-rule bg-surface'
       }`}
       data-testid="event-card"
     >
-      <Poster src={p.src} label={hostName(e)} className="aspect-[415/391] w-full border-b border-rule" />
-      <div className="flex flex-1 flex-col gap-3 p-4">
+      <Poster src={p.src} label={hostName(e)} className={`aspect-[415/391] w-full border-b ${callout ? 'border-accent' : 'border-rule'}`} />
+      <div className={`flex flex-1 flex-col gap-3 p-4 ${callout ? 'on-accent' : ''}`}>
         <h3 className="line-clamp-2 text-md font-medium leading-6">{e.title}</h3>
         <EventMeta e={e} className="mt-auto" />
       </div>
