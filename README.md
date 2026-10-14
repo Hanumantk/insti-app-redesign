@@ -84,7 +84,7 @@ Known inconsistencies in the source posts are in [`KNOWN_COPY_ISSUES.md`](KNOWN_
 | Reject was a modal; Approve had no undo | Reject opens an **inline required field** ("Add a reason so the creator knows what to change."). Approve takes effect immediately, with a **6-second Undo** toast. No confirmation dialogs. |
 | GSec saw Approve/Reject even on approved events | Actions match the status: Approve is hidden once approved, Reject once rejected. |
 | A fixed 1512px canvas, scaled down below that width | Real responsive layouts from 320px up. Students can browse comfortably on a phone. Below 1024px the review queue opens events on their own page. |
-| 728px-tall cards in carousels with hidden scrollbars | 280px cards with **prev/next arrows**, scroll-snap and a visible scrollbar. |
+| 728px-tall cards in carousels with hidden scrollbars | 280px cards with **prev/next arrows**, scroll-snap (scrollbar hidden). |
 | A border plus a blue glow on every card, and pills everywhere | One quiet border; a shadow only on hover for clickable cards. Pills are kept for actions and status (the tone). |
 | Contrast failures (filter text `#C4C4C4`/`#898989`, placeholders, inactive tab, 12px badge) | Every text pair meets WCAG AA. Status is shown with an icon plus a word, never colour alone. |
 | Two near-identical grotesques (Helvetica Neue + Neue Montreal) | **Neue Montreal only.** DM Sans survives only inside the wordmark. |

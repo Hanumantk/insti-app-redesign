@@ -89,7 +89,9 @@
   /* Text and icons sitting on an accent fill (called-out feed cards). */
   .on-accent { --color-ink: var(--color-accent-ink); --color-ink-2: oklch(99.5% 0.004 262 / 0.9); --color-muted: oklch(99.5% 0.004 262 / 0.75); --color-accent: var(--color-accent-ink); }
 
-  .scroll-row { scrollbar-width: thin; scrollbar-color: var(--color-rule-strong) transparent; }
+  /* No scrollbar: rows scroll by the arrows, trackpad/shift-wheel, touch or keyboard focus. */
+  .scroll-row { scrollbar-width: none; }
+  .scroll-row::-webkit-scrollbar { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

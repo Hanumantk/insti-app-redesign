@@ -169,7 +169,7 @@ function useReducedMotion() {
   return reduced
 }
 
-/** A titled row of cards: arrows + scroll-snap, visible thin scrollbar. */
+/** A titled row of cards: arrows + scroll-snap, no visible scrollbar. */
 export function CardRow({
   title, items, testId, filterCount, onFilter, empty,
 }: { title: string; items: InstiEvent[]; testId: string; filterCount?: number; onFilter?: () => void; empty?: ReactNode }) {
