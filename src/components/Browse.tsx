@@ -1,4 +1,4 @@
-import { CaretLeft, CaretRight, Funnel, Megaphone, Pause, Play } from '@phosphor-icons/react'
+import { CaretLeft, CaretRight, Funnel, Megaphone } from '@phosphor-icons/react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import type { InstiEvent } from '../data/types'
@@ -26,7 +26,6 @@ export function EventCard({ e }: { e: InstiEvent }) {
 /** Announcements carousel — takes the old Recommended hero's slot (75:363), one notice per slide. */
 export function AnnouncementsCarousel({ items }: { items: InstiEvent[] }) {
   const [index, setIndex] = useState(0)
-  const [paused, setPaused] = useState(false)
   const [held, setHeld] = useState(false) // hover or keyboard focus inside
   const reduced = useReducedMotion()
   const touchX = useRef<number | null>(null)
@@ -34,20 +33,8 @@ export function AnnouncementsCarousel({ items }: { items: InstiEvent[] }) {
   const at = n ? index % n : 0
   const go = (i: number) => setIndex((i + n) % n)
 
-  useEffect(() => {
-    if (n < 2 || paused || held || reduced) return
-    const t = window.setTimeout(() => setIndex((i) => (i + 1) % n), AUTO_MS)
-    return () => window.clearTimeout(t)
-  }, [at, n, paused, held, reduced])
-
   if (!n) return null
   const auto = n > 1 && !reduced
-  const pauseBtn = (testId?: string) =>
-    auto && (
-      <button className="icon-btn border border-rule-strong bg-surface" aria-label={paused ? 'Play announcements' : 'Pause announcements'} onClick={() => setPaused((p) => !p)} data-testid={testId}>
-        {paused ? <Play size={16} weight="fill" /> : <Pause size={16} weight="fill" />}
-      </button>
-    )
   const stepBtn = (d: 1 | -1, testId?: string) => (
     <button className="icon-btn border border-rule-strong bg-surface" aria-label={d < 0 ? 'Previous announcement' : 'Next announcement'} onClick={() => go(at + d)} data-testid={testId}>
       {d < 0 ? <CaretLeft size={18} /> : <CaretRight size={18} />}
@@ -71,7 +58,6 @@ export function AnnouncementsCarousel({ items }: { items: InstiEvent[] }) {
         {n > 1 && (
           <div className="hidden items-center gap-2 sm:flex">
             <span className="tnum mr-1 text-sm text-muted" data-testid="announcements-count">{at + 1} / {n}</span>
-            {pauseBtn('announcements-pause')}
             {stepBtn(-1, 'announcements-prev')}
             {stepBtn(1, 'announcements-next')}
           </div>
@@ -87,7 +73,7 @@ export function AnnouncementsCarousel({ items }: { items: InstiEvent[] }) {
         }}
       >
         {/* Slides share the tallest one's height, so the page never jumps as they change. */}
-        <div className="flex transition-transform duration-slide ease-out" style={{ transform: `translateX(-${at * 100}%)` }} aria-live={auto && !paused ? 'off' : 'polite'}>
+        <div className="flex transition-transform duration-slide ease-out" style={{ transform: `translateX(-${at * 100}%)` }} aria-live={auto ? 'off' : 'polite'}>
           {items.map((e, i) => (
             <AnnouncementSlide key={e.id} e={e} label={`${i + 1} of ${n}`} hidden={i !== at} />
           ))}
@@ -96,7 +82,7 @@ export function AnnouncementsCarousel({ items }: { items: InstiEvent[] }) {
       {n > 1 && (
         <div className="mt-3 flex items-center justify-center gap-1">
           {/* Below sm the header is too narrow for the controls; they sit around the dots instead. */}
-          <span className="mr-auto flex gap-2 sm:hidden">{pauseBtn()}{stepBtn(-1)}</span>
+          <span className="mr-auto sm:hidden">{stepBtn(-1)}</span>
           {items.map((e, i) => (
             <button
               key={e.id}
@@ -105,7 +91,19 @@ export function AnnouncementsCarousel({ items }: { items: InstiEvent[] }) {
               aria-current={i === at ? 'true' : undefined}
               onClick={() => go(i)}
             >
-              <span className={`block h-1.5 rounded-pill transition-[width,background-color] duration-short ease-out ${i === at ? 'w-6 bg-accent' : 'w-1.5 bg-rule-strong group-hover:bg-muted'}`} />
+              <span className={`relative block h-1.5 overflow-hidden rounded-pill transition-[width,background-color] duration-short ease-out ${i === at ? 'w-10 bg-rule-strong' : 'w-1.5 bg-rule-strong group-hover:bg-muted'}`}>
+                {/* The active pill fills over AUTO_MS; finishing the fill is what advances the slide,
+                    so hover/focus pausing the fill pauses the carousel too. */}
+                {i === at && (
+                  <span
+                    key={at}
+                    className="absolute inset-0 origin-left rounded-pill bg-accent"
+                    style={auto ? { animation: `progress ${AUTO_MS}ms linear forwards`, animationPlayState: held ? 'paused' : 'running' } : undefined}
+                    onAnimationEnd={() => go(at + 1)}
+                    data-testid="announcements-progress"
+                  />
+                )}
+              </span>
             </button>
           ))}
           <span className="ml-auto sm:hidden">{stepBtn(1)}</span>

@@ -17,7 +17,8 @@ modern-minimal (product UI). One accent, quiet surfaces, type carries hierarchy.
   queue list left (status filter + search), detail panel right. No footer.
   Inline decisions, optimistic approve with Undo, keyboard J/K · A · R · E.
 - **Browse** (Recommended home, all roles) — Ecosystem index: an Announcements
-  carousel in the hero slot (auto-advances every 6s; pause, arrows, dots, swipe;
+  carousel in the hero slot (auto-advances every 6s,
+  shown by a filling progress pill; hover/focus holds it; arrows, dots, swipe;
   still under reduced motion), then rows by type (Events, Competitions) with
   arrows + scroll-snap. Filters open as a right-hand sheet.
 - **Detail** (event page) — split: poster sticky left, details scroll right.

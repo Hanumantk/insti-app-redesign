@@ -138,7 +138,8 @@ test('feed = live insti.app posts + restored Figma posts; filters; sheets close'
   const total = liveCount('announcement') + 4
   await expect(slides).toHaveCount(total)
   await expect(carousel.getByRole('heading', { name: 'Announcements' })).toBeVisible()
-  await page.getByTestId('announcements-pause').click()
+  await carousel.hover() // holds the progress bar so the slide doesn't advance mid-test
+  await carousel.getByRole('button', { name: 'Show announcement 1', exact: true }).click()
   await expect(page.getByTestId('announcements-count')).toHaveText(`1 / ${total}`)
   await page.getByTestId('announcements-next').click()
   await expect(page.getByTestId('announcements-count')).toHaveText(`2 / ${total}`)
@@ -147,6 +148,9 @@ test('feed = live insti.app posts + restored Figma posts; filters; sheets close'
   await page.getByTestId('announcements-prev').click()
   await expect(page.getByTestId('announcements-count')).toHaveText(`${total} / ${total}`)
   await expect(slides.last()).toContainText('Surbahaar auditions')
+  // Once the pointer leaves, the progress pill fills (6s) and moves to the next slide.
+  await page.mouse.move(0, 0)
+  await expect(page.getByTestId('announcements-count')).toHaveText(`1 / ${total}`, { timeout: 8000 })
 })
 
 test('review queue: J/K move, R opens the reason field, Esc cancels', async ({ page }) => {

@@ -94,6 +94,7 @@
 }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes sheet-in { from { transform: translateX(32px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes progress { from { transform: scaleX(0); } to { transform: none; } }
 @keyframes toast-in { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
 
 /* Squiggle scale for the gate screens (step-wise, so no unit-division maths is needed). */
