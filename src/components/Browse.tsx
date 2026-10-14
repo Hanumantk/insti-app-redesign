@@ -1,9 +1,8 @@
-import { CaretLeft, CaretRight, Funnel } from '@phosphor-icons/react'
+import { CaretLeft, CaretRight, Funnel, Megaphone, Pause, Play } from '@phosphor-icons/react'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import type { InstiEvent } from '../data/types'
 import { hostName, posterFor } from '../lib/events'
-import { useApp } from '../store/useApp'
 import { EventMeta, Poster } from './ui'
 
 /** Feed card — 280px wide (5 per row at 1512), poster on Figma's own 415:391 crop. */
@@ -24,36 +23,139 @@ export function EventCard({ e }: { e: InstiEvent }) {
   )
 }
 
-/** Recommended feature (75:363), two-column and content-height. */
-export function RecommendedHero({ e }: { e: InstiEvent }) {
-  const mine = useApp((s) => s.reactions[e.id])
-  const toggle = useApp((s) => s.toggleReaction)
-  const p = posterFor(e, 'hero')
+/** Announcements carousel — takes the old Recommended hero's slot (75:363), one notice per slide. */
+export function AnnouncementsCarousel({ items }: { items: InstiEvent[] }) {
+  const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const [held, setHeld] = useState(false) // hover or keyboard focus inside
+  const reduced = useReducedMotion()
+  const touchX = useRef<number | null>(null)
+  const n = items.length
+  const at = n ? index % n : 0
+  const go = (i: number) => setIndex((i + n) % n)
+
+  useEffect(() => {
+    if (n < 2 || paused || held || reduced) return
+    const t = window.setTimeout(() => setIndex((i) => (i + 1) % n), AUTO_MS)
+    return () => window.clearTimeout(t)
+  }, [at, n, paused, held, reduced])
+
+  if (!n) return null
+  const auto = n > 1 && !reduced
+  const pauseBtn = (testId?: string) =>
+    auto && (
+      <button className="icon-btn border border-rule-strong bg-surface" aria-label={paused ? 'Play announcements' : 'Pause announcements'} onClick={() => setPaused((p) => !p)} data-testid={testId}>
+        {paused ? <Play size={16} weight="fill" /> : <Pause size={16} weight="fill" />}
+      </button>
+    )
+  const stepBtn = (d: 1 | -1, testId?: string) => (
+    <button className="icon-btn border border-rule-strong bg-surface" aria-label={d < 0 ? 'Previous announcement' : 'Next announcement'} onClick={() => go(at + d)} data-testid={testId}>
+      {d < 0 ? <CaretLeft size={18} /> : <CaretRight size={18} />}
+    </button>
+  )
   return (
-    <article className={`grid grid-cols-[minmax(0,1fr)] overflow-hidden rounded-panel border border-rule bg-surface ${p.src ? 'md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)]' : ''}`}>
-      {/* The poster fills its column; the text column sets the card's height. No poster → text only. */}
-      {p.src && (
-        <Link to={`/event/${e.id}`} className="relative block aspect-[16/9] border-b border-rule md:aspect-auto md:border-b-0 md:border-r" aria-label={e.title}>
-          <Poster src={p.src} className="absolute inset-0 size-full" />
-        </Link>
-      )}
-      <div className="flex min-w-0 flex-col gap-4 p-6 md:p-8">
-        <h2 className="text-xl font-bold">
-          <Link to={`/event/${e.id}`} className="hover:underline hover:decoration-1 hover:underline-offset-4">{e.title}</Link>
+    <section
+      aria-roledescription="carousel"
+      aria-labelledby="announcements-heading"
+      data-testid="announcements-carousel"
+      onMouseEnter={() => setHeld(true)}
+      onMouseLeave={() => setHeld(false)}
+      onFocus={() => setHeld(true)}
+      onBlur={(ev) => !ev.currentTarget.contains(ev.relatedTarget) && setHeld(false)}
+    >
+      <div className="flex items-center gap-2">
+        <h2 id="announcements-heading" className="mr-auto flex items-center gap-2 text-xl font-bold">
+          <Megaphone size={24} className="text-accent" aria-hidden />
+          Announcements
         </h2>
-        <p className="line-clamp-4 max-w-[64ch] text-ink-2">{e.heroBlurb ?? e.description}</p>
+        {n > 1 && (
+          <div className="hidden items-center gap-2 sm:flex">
+            <span className="tnum mr-1 text-sm text-muted" data-testid="announcements-count">{at + 1} / {n}</span>
+            {pauseBtn('announcements-pause')}
+            {stepBtn(-1, 'announcements-prev')}
+            {stepBtn(1, 'announcements-next')}
+          </div>
+        )}
+      </div>
+      <div
+        className="mt-4 overflow-hidden rounded-panel border border-rule bg-surface"
+        onTouchStart={(ev) => (touchX.current = ev.touches[0].clientX)}
+        onTouchEnd={(ev) => {
+          const dx = ev.changedTouches[0].clientX - (touchX.current ?? ev.changedTouches[0].clientX)
+          touchX.current = null
+          if (n > 1 && Math.abs(dx) > 40) go(at + (dx < 0 ? 1 : -1))
+        }}
+      >
+        {/* Slides share the tallest one's height, so the page never jumps as they change. */}
+        <div className="flex transition-transform duration-slide ease-out" style={{ transform: `translateX(-${at * 100}%)` }} aria-live={auto && !paused ? 'off' : 'polite'}>
+          {items.map((e, i) => (
+            <AnnouncementSlide key={e.id} e={e} label={`${i + 1} of ${n}`} hidden={i !== at} />
+          ))}
+        </div>
+      </div>
+      {n > 1 && (
+        <div className="mt-3 flex items-center justify-center gap-1">
+          {/* Below sm the header is too narrow for the controls; they sit around the dots instead. */}
+          <span className="mr-auto flex gap-2 sm:hidden">{pauseBtn()}{stepBtn(-1)}</span>
+          {items.map((e, i) => (
+            <button
+              key={e.id}
+              className="group grid h-6 place-items-center px-1"
+              aria-label={`Show announcement ${i + 1}`}
+              aria-current={i === at ? 'true' : undefined}
+              onClick={() => go(i)}
+            >
+              <span className={`block h-1.5 rounded-pill transition-[width,background-color] duration-short ease-out ${i === at ? 'w-6 bg-accent' : 'w-1.5 bg-rule-strong group-hover:bg-muted'}`} />
+            </button>
+          ))}
+          <span className="ml-auto sm:hidden">{stepBtn(1)}</span>
+        </div>
+      )}
+    </section>
+  )
+}
+
+const AUTO_MS = 6000
+
+function AnnouncementSlide({ e, label, hidden }: { e: InstiEvent; label: string; hidden: boolean }) {
+  const p = posterFor(e, 'detail')
+  return (
+    <article
+      aria-roledescription="slide"
+      aria-label={label}
+      aria-hidden={hidden || undefined}
+      // `inert` keeps off-screen slides out of the tab order (React 18 has no typed prop for it).
+      {...(hidden ? { inert: '' } : {})}
+      className="grid w-full shrink-0 grid-cols-[minmax(0,1fr)] md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)]"
+      data-testid="announcement-slide"
+    >
+      <Link to={`/event/${e.id}`} tabIndex={-1} aria-hidden className="relative block aspect-[16/9] border-b border-rule bg-paper md:aspect-auto md:min-h-[320px] md:border-b-0 md:border-r">
+        <Poster src={p.src} cover={false} label={hostName(e)} className={`absolute inset-0 size-full ${p.src ? '!bg-transparent p-4' : ''}`} />
+      </Link>
+      <div className="flex min-w-0 flex-col gap-4 p-6 md:p-8">
+        <h3 className="text-xl font-bold">
+          <Link to={`/event/${e.id}`} className="hover:underline hover:decoration-1 hover:underline-offset-4">{e.title}</Link>
+        </h3>
+        <p className="line-clamp-4 max-w-[64ch] text-ink-2">{e.heroBlurb ?? e.description.replace(/\s*\n+\s*/g, ' ')}</p>
         <EventMeta e={e} size="md" />
-        <div className="mt-auto flex flex-wrap gap-2 pt-2">
-          <button className={`btn ${mine?.interested ? 'border-accent bg-accent-tint text-accent-strong' : 'btn-secondary'}`} aria-pressed={!!mine?.interested} onClick={() => toggle(e.id, 'interested')}>
-            Interested
-          </button>
-          <button className={`btn ${mine?.going ? 'border-accent bg-accent-tint text-accent-strong' : 'btn-secondary'}`} aria-pressed={!!mine?.going} onClick={() => toggle(e.id, 'going')}>
-            Going
-          </button>
+        <div className="mt-auto pt-2">
+          <Link to={`/event/${e.id}`} className="btn btn-secondary">Read announcement</Link>
         </div>
       </div>
     </article>
   )
+}
+
+function useReducedMotion() {
+  const q = '(prefers-reduced-motion: reduce)'
+  const [reduced, setReduced] = useState(() => window.matchMedia(q).matches)
+  useEffect(() => {
+    const m = window.matchMedia(q)
+    const on = () => setReduced(m.matches)
+    m.addEventListener('change', on)
+    return () => m.removeEventListener('change', on)
+  }, [])
+  return reduced
 }
 
 /** A titled row of cards: arrows + scroll-snap, visible thin scrollbar. */

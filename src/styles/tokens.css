@@ -55,7 +55,7 @@
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
-  --dur-press: 120ms; --dur-short: 160ms; --dur-sheet-in: 240ms; --dur-sheet-out: 180ms;
+  --dur-press: 120ms; --dur-short: 160ms; --dur-sheet-in: 240ms; --dur-sheet-out: 180ms; --dur-slide: 480ms;
 
   --topbar-h: 64px;
 }

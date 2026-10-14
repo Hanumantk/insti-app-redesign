@@ -76,6 +76,7 @@ export default {
         short: '160ms',
         'sheet-in': '240ms',
         'sheet-out': '180ms',
+        slide: '480ms',
       },
       maxWidth: {
         page: '1440px',

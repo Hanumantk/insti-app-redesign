@@ -1,8 +1,7 @@
-import { Megaphone, Plus } from '@phosphor-icons/react'
+import { Plus } from '@phosphor-icons/react'
 import { useCallback, useMemo } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { AnnouncementsSheet } from '../components/AnnouncementsSheet'
-import { CardRow, RecommendedHero } from '../components/Browse'
+import { AnnouncementsCarousel, CardRow } from '../components/Browse'
 import { FilterSheet } from '../components/FilterSheet'
 import { Footer } from '../components/Footer'
 import { ReviewWorkspace } from '../components/ReviewWorkspace'
@@ -36,7 +35,6 @@ export function HomePage() {
   const allEvents = byType(events, 'event')
   const evs = applyFilters(allEvents, filters)
   const comps = byType(events, 'competition')
-  const hero = feedItems(events).find((e) => e.recommended) ?? allEvents[0]
   const reviewing = tab !== 'recommended'
   const waitingByType = useMemo(() => {
     const w = { event: 0, competition: 0, announcement: 0 }
@@ -47,19 +45,12 @@ export function HomePage() {
   const header = (
     <Page className="flex flex-wrap items-end gap-x-6 gap-y-3 pt-5">
       <Tabs role={role} active={tab} pending={pendingForGsec} rejected={rejectedForGsha} />
-      <div className="mb-2 ml-auto flex gap-2">
-        <button className="btn btn-secondary" onClick={() => openDrawer('announcements')} data-testid="announcements-button">
-          <Megaphone size={18} aria-hidden />
-          Announcements
-          <CountBadge n={announcements.length} label={`${announcements.length} announcements`} />
+      {role !== 'student' && (
+        <button className="btn btn-primary mb-2 ml-auto" onClick={() => nav('/event/new')} data-testid="fab-add">
+          <Plus size={16} weight="bold" aria-hidden />
+          New event
         </button>
-        {role !== 'student' && (
-          <button className="btn btn-primary" onClick={() => nav('/event/new')} data-testid="fab-add">
-            <Plus size={16} weight="bold" aria-hidden />
-            New event
-          </button>
-        )}
-      </div>
+      )}
     </Page>
   )
 
@@ -78,7 +69,7 @@ export function HomePage() {
           <main>
             {header}
             <Page className="grid grid-cols-[minmax(0,1fr)] gap-12 pt-6">
-              {hero && <RecommendedHero e={hero} />}
+              <AnnouncementsCarousel items={announcements} />
               <CardRow
                 title="Events"
                 items={evs}
@@ -101,7 +92,6 @@ export function HomePage() {
       )}
 
       {drawer === 'filter' && <FilterSheet onClose={closeDrawer} resultCount={evs.length} days={weekdaysOf(allEvents)} />}
-      {drawer === 'announcements' && <AnnouncementsSheet items={announcements} onClose={closeDrawer} />}
     </>
   )
 }

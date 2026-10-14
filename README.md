@@ -42,7 +42,7 @@ The feed combines two sources:
 | Source | What it adds |
 |---|---|
 | **Live insti.app** ([`src/data/live-feed.json`](src/data/live-feed.json)) | 24 posts from 13 bodies: **19 events, 2 competitions, 3 announcements**. Every post starting since **1 Sep 2026**, plus anything still running (e.g. the year-long Industrial Learning Program). 21 posters in `public/assets/live/`. Listed first in each row, newest first. |
-| **Figma mock** ([`src/data/figma-seed.ts`](src/data/figma-seed.ts)) | The original posts, restored: the **Recommended** hero (Curious Community), 4 events, 4 competitions, 4 announcements, and the 5 GSHA submissions behind Event status / Event Approvals. Listed after the live posts. |
+| **Figma mock** ([`src/data/figma-seed.ts`](src/data/figma-seed.ts)) | The original posts, restored: 4 events, 4 competitions (incl. Curious Community, the old Recommended hero), 4 announcements (they slide in the home carousel), and the 5 GSHA submissions behind Event status / Event Approvals. Listed after the live posts. |
 
 **Refreshing the live posts.** `npm run sync:feed` ([`scripts/sync-feed.mjs`](scripts/sync-feed.mjs)) snapshots the public API
 behind https://www.insti.app/feed (`https://gymkhana.iitb.ac.in/instiapp/api/events`; `api.insti.app`

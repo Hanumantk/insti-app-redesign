@@ -115,7 +115,6 @@ test('feed = live insti.app posts + restored Figma posts; filters; sheets close'
   await expect(page.getByTestId('events-row')).toContainText('Literarium All Team Meet')
   await expect(page.getByTestId('competitions-row')).toContainText('AI-ML GC 2025-26 | Web and Coding Club')
   await expect(events.first()).toContainText(LIVE.events.find((e) => e.type === 'event')!.title)
-  await expect(page.getByRole('heading', { level: 2, name: 'Curious Community: MetaMorph | EnPoWER, UGAC' })).toBeVisible()
 
   // Day chips come from the data; pick the first one and check the count it promises.
   await page.getByTestId('filter-by').click()
@@ -133,13 +132,21 @@ test('feed = live insti.app posts + restored Figma posts; filters; sheets close'
   await expect(events).toHaveCount(1)
   await expect(events.first()).toContainText('Peer Connect: A Listening Listening Circle for PhD')
 
-  // Announcements: live notices + the four Figma ones.
-  await page.getByTestId('announcements-button').click()
-  const panel = page.getByTestId('announcements-panel')
-  await expect(panel.getByRole('link')).toHaveCount(liveCount('announcement') + 4)
-  await expect(panel).toContainText('Surbahaar auditions')
-  await page.getByTestId('announcements-panel-close').click()
-  await expect(panel).toHaveCount(0)
+  // Announcements slide in the hero slot: live notices + the four Figma ones.
+  const carousel = page.getByTestId('announcements-carousel')
+  const slides = carousel.getByTestId('announcement-slide')
+  const total = liveCount('announcement') + 4
+  await expect(slides).toHaveCount(total)
+  await expect(carousel.getByRole('heading', { name: 'Announcements' })).toBeVisible()
+  await page.getByTestId('announcements-pause').click()
+  await expect(page.getByTestId('announcements-count')).toHaveText(`1 / ${total}`)
+  await page.getByTestId('announcements-next').click()
+  await expect(page.getByTestId('announcements-count')).toHaveText(`2 / ${total}`)
+  await expect(slides.nth(1)).not.toHaveAttribute('aria-hidden', 'true')
+  await page.getByTestId('announcements-prev').click()
+  await page.getByTestId('announcements-prev').click()
+  await expect(page.getByTestId('announcements-count')).toHaveText(`${total} / ${total}`)
+  await expect(slides.last()).toContainText('Surbahaar auditions')
 })
 
 test('review queue: J/K move, R opens the reason field, Esc cancels', async ({ page }) => {

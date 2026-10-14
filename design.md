@@ -16,9 +16,10 @@ modern-minimal (product UI). One accent, quiet surfaces, type carries hierarchy.
 - **Review workspace** (GSHA "Event status", GSec "Event Approvals") — master–detail:
   queue list left (status filter + search), detail panel right. No footer.
   Inline decisions, optimistic approve with Undo, keyboard J/K · A · R · E.
-- **Browse** (Recommended home, all roles) — Ecosystem index: one recommended
-  feature, then rows by type (Events, Competitions) with arrows + scroll-snap.
-  Filters and Announcements open as right-hand sheets.
+- **Browse** (Recommended home, all roles) — Ecosystem index: an Announcements
+  carousel in the hero slot (auto-advances every 6s; pause, arrows, dots, swipe;
+  still under reduced motion), then rows by type (Events, Competitions) with
+  arrows + scroll-snap. Filters open as a right-hand sheet.
 - **Detail** (event page) — split: poster sticky left, details scroll right.
   Role-aware action bar shares the review panel's component.
 - **Form** (create / edit) — split like Detail: poster drop zone left, labelled
